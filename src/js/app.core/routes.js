@@ -20,19 +20,19 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/login.tpl.html',
       controller: 'LoginController as login'
     })
-    .state('root.group-search', {
-      url: '/group-search',
-      templateUrl: 'templates/group-search.tpl.html',
+    .state('root.groupSearch', {
+      url: '/groupSearch',
+      templateUrl: 'templates/groupSearch.tpl.html',
       controller: 'GroupSearchController as groupSearch'
     })
-    .state('root.group-single', {
+    .state('root.groupSingle', {
       url: '/group-single',
-      templateUrl: 'templates/group-single.tpl.html',
+      templateUrl: 'templates/groupSingle.tpl.html',
       controller: 'GroupSingleController as groupSingle'
     })
-    .state('root.group-add', {
-      url: '/group-add',
-      templateUrl: 'templates/group-add.tpl.html',
+    .state('root.groupAdd', {
+      url: '/groupAdd',
+      templateUrl: 'templates/groupAdd.tpl.html',
       controller: 'GroupAddController as groupAdd'
     });
 
