@@ -1,0 +1,13 @@
+<h3 class="title">Login</h3>
+
+<form name="signup-form" ng-submit="login.activate(user)">
+  <p class="control">
+    <input name="username" type="text" placeholder="Username"
+           ng-model="user.username" required />
+  </p>
+  <p class="control">
+    <input name="password" type="password" placeholder="Password"
+           ng-model="user.password" required />
+  </p>
+  <button>Login</button>
+</form>

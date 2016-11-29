@@ -1,7 +1,7 @@
 function UserService ($http, $cookies, SERVER) {
 
-  this.login = login;
   this.register = register;
+  this.login = login;
   this.isLoggedIn = isLoggedIn;
   this.setUser = setUser;
   this.logout = logout;
