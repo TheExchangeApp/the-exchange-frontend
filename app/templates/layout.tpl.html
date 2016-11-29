@@ -1,0 +1,31 @@
+<header>
+  <nav class="nav">
+    <div class="nav-left">
+      <a class="nav-item" href="#/">The Exchange</a>
+    </div>
+    <div class="nav-right nav-menu">
+      <a class="nav-item" href="#/groupAdd"
+         ng-show="layout.loggedIn">Add a Group</a>
+
+      <a class="nav-item" href="#/groupSearch"
+         ng-show="layout.loggedIn">Search for a Group</a>
+
+      <a class="nav-item" href="#/register"
+         ng-show="!layout.loggedIn">Sign Up</a>
+      <a class="nav-item" href="#/login"
+         ng-show="!layout.loggedIn">Login</a>
+      <a class="nav-item" href="#/"
+         ng-show="layout.loggedIn"
+         ng-click="layout.logout()">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrapper" ui-view>
+</div>
+
+<footer>
+  <div class="content has-text-centered">
+    Tai & Grace (tm) production.
+  </div>
+</footer>

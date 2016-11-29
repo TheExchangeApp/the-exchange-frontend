@@ -1,14 +1,14 @@
 function UserService ($http, $cookies, SERVER) {
 
+  this.register = register;
   this.login = login;
-  this.create = create;
   this.isLoggedIn = isLoggedIn;
   this.setUser = setUser;
   this.logout = logout;
   this.getHeaders = getHeaders;
 
-  function create (user) {
-    return $http.post(`${SERVER}/users`, user);
+  function register (user) {
+    return $http.post(`${SERVER}/user`, user);
   };
 
   function login (user) {

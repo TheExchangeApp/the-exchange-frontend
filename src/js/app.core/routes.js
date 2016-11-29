@@ -8,7 +8,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('root.home', {
       url: '/home',
       templateUrl: 'templates/home.tpl.html',
-      controller: 'HomeController as home'
+      // controller: 'HomeController as home'
     })
     .state('root.register', {
       url: '/register',
@@ -36,7 +36,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       controller: 'GroupAddController as groupAdd'
     });
 
-  $urlRouterProvider.otherwise('/home');
+  // $urlRouterProvider.otherwise('/home');
 };
 
 routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];

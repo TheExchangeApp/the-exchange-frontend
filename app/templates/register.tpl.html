@@ -1,0 +1,25 @@
+<h3 class="title">Sign Up</h3>
+
+<form name="signup-form" ng-submit="register.registerUser(user)">
+  <p class="control">
+    <input name="name" type="text" placeholder="Name"
+           ng-model="user.name" required />
+  </p>
+  <p class="control">
+    <input name="username" type="text" placeholder="Username"
+           ng-model="user.username" required />
+  </p>
+  <p class="control">
+    <input name="email" type="text" placeholder="email@example.com"
+           ng-model="user.email" required />
+  </p>
+  <p class="control">
+    <input name="password" type="password" placeholder="password"
+           ng-model="user.password" required />
+  </p>
+  <p class="control">
+    <input name="img_url" type="text" placeholder="http://img.com"
+           ng-model="user.img_url" required />
+  </p>
+  <button>Create User</button>
+</form>
