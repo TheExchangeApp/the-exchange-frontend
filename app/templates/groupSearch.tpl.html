@@ -1,35 +1,37 @@
 <h3 class="title">Search for a Group</h3>
-<form name="search-form" ng-model="searchKeyword" ng-submit="groupSearch.search(group)" ng-show="groupSearch.search">
-  <p>  What do you want to search by?</p>
+
+<form name="search-form" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
+
+  <p>What do you want to search by?</p>
   <p class="control">
     <input name="title" type="text" placeholder="Group Title"
-           ng-model="group.title" />
-  </p>
+           ng-model="group.title" /></p>
   <p class="control">
     <input name="category" type="text" placeholder="Group Category"
-           ng-model="group.category" />
-  </p>
+           ng-model="group.category" /></p>
   <p class="control">
     <input name="description" type="text" placeholder="Group Description"
-           ng-model="group.description" />
-  </p>
+           ng-model="group.description" /></p>
   <p class="control">
     <input name="day" type="text" placeholder="Mtg Frequency (Day of Week)"
-           ng-model="group.day" />
-  </p>
+           ng-model="group.day" /></p>
   <p class="control">
     <input name="childcare" type="number" placeholder="Has Childcare"
-           ng-model="group.childcare" />
-  </p>
-  <button ng-click="!groupSearch.search">Submit</button>
-</form>
-<div class="search-results" ng-show="groupSearch.search">
-  <ul>
-    <li ng-repeat="group in groupSearch.groups.group | filter:searchKeyword">
-      <p>
-        {{group.title}}
-      </p>
+           ng-model="group.childcare" /></p>
 
+  <button>Submit</button>
+</form>
+
+<div class="search-results" ng-show="groupSearch.showResults">
+  <ul>
+    <li ng-repeat="group in groupSearch.groups.results">
+      <p><a class="group-detail" href="#/group-single/{{ group.id }}">
+        {{group.title}} - {{group.category}}
+        {{group.description}}
+        {{group.day}}
+        {{group.childcare}}
+        </a>
+      </p>
     </li>
   </ul>
 </div>
