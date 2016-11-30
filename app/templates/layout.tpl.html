@@ -4,6 +4,10 @@
       <a class="nav-item" href="#/">The Exchange</a>
     </div>
     <div class="nav-right nav-menu">
+
+      <a class="nav-item" href="#/home"
+         ng-show="layout">About</a>
+
       <a class="nav-item" href="#/groupAdd"
          ng-show="layout.loggedIn">Add a Group</a>
 
@@ -18,7 +22,11 @@
          ng-show="layout.loggedIn"
          ng-click="layout.logout()">Logout</a>
     </div>
+
+
+
   </nav>
+
 </header>
 
 <div class="wrapper" ui-view>
@@ -28,4 +36,7 @@
   <div class="content has-text-centered">
     Tai & Grace (tm) production.
   </div>
+  <a href="https://www.instagram.com/" class="socialmedia" title="Facebook" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+  <a href="https://www.twitter.com/" class="socialmedia" title="Facebook" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/" class="socialmedia" title="Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 </footer>
