@@ -1,7 +1,8 @@
 <h3 class="title">Add a Group</h3>
 
-<form name="group-form" ng-submit="groups.add(group)">
-  <p class="control">Meeting Details
+<form name="group-form" ng-submit="groupAdd.add(group)">
+  <p>Meeting Information</p>
+  <p class="control">
     <input name="title" type="text" placeholder="Group Title"
            ng-model="group.title" required />
   </p>
@@ -9,19 +10,20 @@
     <input name="category" type="text" placeholder="Category"
            ng-model="group.category" required />
   </p>
-  <p class="control">
+  <!-- <p class="control">
     <input name="description" type="text" placeholder="Group Description"
            ng-model="group.description" required />
   </p>
   <p class="control">
     <input name="childcare" type="text" placeholder="Childcare"
            ng-model="group.childcare" required />
-  </p>
+  </p> -->
   <p class="control">
     <input name="day" type="text" placeholder="Meeting Time"
            ng-model="group.day" required />
   </p>
-  <p class="control">Location
+    <p>Meeting Location</p>
+  <p class="control">
     <input name="street" type="text" placeholder="Street"
            ng-model="address.street" required />
   </p>
@@ -29,13 +31,13 @@
     <input name="city" type="text" placeholder="City"
            ng-model="address.city" required />
   </p>
-  <p class="control">
+  <!-- <p class="control">
     <input name="state" type="text" placeholder="State"
            ng-model="address.state" required />
   </p>
   <p class="control">
     <input name="zip" type="text" placeholder="Zip code"
            ng-model="address.zip" required />
-  </p>
+  </p> -->
   <button>Submit</button>
 </form>

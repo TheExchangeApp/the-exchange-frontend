@@ -11,7 +11,7 @@ function LoginController (UserService, $state, $rootScope) {
         $state.go('root.home');
       },
       errors => {
-        console.log(errors.data.error);
+        vm.error = errors.data.error;
       }
     );
   };

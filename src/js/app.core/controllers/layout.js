@@ -4,6 +4,7 @@ function LayoutController ($rootScope, UserService) {
   vm.loggedIn = UserService.isLoggedIn();
   vm.logout = logout;
 
+
   $rootScope.$on('loginChange', (event, data) => {
     vm.loggedIn = UserService.isLoggedIn();
   });

@@ -12,10 +12,10 @@ function GroupService ($http, SERVER, UserService) {
     return $http.get(`${SERVER}/group/id`);
   }
 
-  function groupAdd (Group) {
+  function groupAdd (group) {
     let req = {
       url: `${SERVER}/group`,
-      data: Group,
+      data: group,
       method: 'POST',
       headers: UserService.getHeaders()
     };
@@ -26,7 +26,7 @@ function GroupService ($http, SERVER, UserService) {
   function groupDelete () {
     let req = {
       url: `${SERVER}/group/id`,
-      data: Group,
+      data: group,
       method: 'DELETE',
       headers: UserService.getHeaders()
     };
@@ -37,7 +37,7 @@ function GroupService ($http, SERVER, UserService) {
   function groupEdit () {
     let req = {
       url: `${SERVER}/group/id`,
-      data: Group,
+      data: group,
       method: 'PUT',
       headers: UserService.getHeaders()
     };
