@@ -1,5 +1,5 @@
 <h3 class="title">Search for a Group</h3>
-<form name="search-form" ng-model="searchKeyword" ng-submit="groupSearch.search(group)" ng-show="groupSearch.search">
+<form name="search-form" ng-submit="groupSearch.search(group)" ng-show="groupSearch.search">
   <p>  What do you want to search by?</p>
   <p class="control">
     <input name="title" type="text" placeholder="Group Title"
@@ -25,7 +25,7 @@
 </form>
 <div class="search-results" ng-show="groupSearch.search">
   <ul>
-    <li ng-repeat="group in groupSearch.groups.group | filter:searchKeyword">
+    <li ng-repeat="group in groupSearch.groups.group">
       <p>
         {{group.title}}
       </p>
