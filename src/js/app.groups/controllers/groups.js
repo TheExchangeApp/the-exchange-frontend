@@ -27,8 +27,10 @@ function GroupsController (GroupService, $state) {
   function search (group) {
     GroupService.groupSearch(group).then((resp) => {
       vm.groups = resp.data;
+      console.log(vm.groups);
     });
   }
+
 };
 
 GroupsController.$inject = ['GroupService', '$state'];
