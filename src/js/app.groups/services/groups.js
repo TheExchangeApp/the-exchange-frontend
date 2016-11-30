@@ -4,8 +4,14 @@ function GroupService ($http, SERVER, UserService) {
   this.groupSingle = groupSingle;
   this.groupAdd = groupAdd;
 
-  function groupSearch () {
-    return $http.get(`${SERVER}/group/search`);
+  function groupSearch (group) {
+    let req = {
+      url: `${SERVER}/group/search`,
+      data: group,
+      method: 'POST',
+      headers: UserService.getHeaders()
+    }
+    return $http(req);
   }
 
   function groupSingle () {
