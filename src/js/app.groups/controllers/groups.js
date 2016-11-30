@@ -4,6 +4,7 @@ function GroupsController (GroupService, $state) {
   vm.groups = [];
   vm.add = add;
   vm.search = search;
+  vm.showResults = false;
 
   function add (group) {
 
@@ -15,18 +16,17 @@ function GroupsController (GroupService, $state) {
   function init () {
     GroupService.groupSearch().then((resp) => {
       vm.groups = resp.data;
+
     });
   }
 
   init();
 
-  // $rootScope.$on('searchChange', (event, data) => {
-  //   vm.search = GroupService.groupSearch();
-  // });
-  //
   function search (group) {
     GroupService.groupSearch(group).then((resp) => {
       vm.groups = resp.data;
+      console.log(vm.groups);
+      vm.showResults = true;
     });
   }
 };

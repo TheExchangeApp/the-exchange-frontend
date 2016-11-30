@@ -1,14 +1,16 @@
 function GroupService ($http, SERVER, UserService) {
 
-  this.groupSearch = groupSearch;
-  this.groupSingle = groupSingle;
-  this.groupAdd = groupAdd;
+  let vm = this;
+
+  vm.groupSearch = groupSearch;
+  vm.groupSingle = groupSingle;
+  vm.groupAdd = groupAdd;
 
   function groupSearch (group) {
     let req = {
       url: `${SERVER}/group/search`,
       data: group,
-      method: 'POST',
+      method: 'GET',
       headers: UserService.getHeaders()
     }
     return $http(req);
@@ -50,6 +52,7 @@ function GroupService ($http, SERVER, UserService) {
 
     return $http(req);
   }
+
 };
 
 GroupService.$inject = ['$http', 'SERVER', 'UserService'];
