@@ -1,26 +1,22 @@
 function GroupsController (GroupService, $state) {
+
   let vm = this;
 
   vm.groups = [];
   vm.add = add;
   vm.search = search;
+  vm.detail = detail;
   vm.showResults = false;
 
-  function add (group) {
+  function init () {
 
+  }
+
+  function add (group) {
     GroupService.groupAdd(group).then((resp) => {
       $state.go('root.home');
     });
   }
-
-  function init () {
-    GroupService.groupSearch().then((resp) => {
-      vm.groups = resp.data;
-
-    });
-  }
-
-  init();
 
   function search (group) {
     GroupService.groupSearch(group).then((resp) => {
@@ -29,6 +25,15 @@ function GroupsController (GroupService, $state) {
       vm.showResults = true;
     });
   }
+
+  function detail (group) {
+    console.log("hello")
+    GroupService.groupDetail(group).then((resp) => {
+      vm.groups = resp.data;
+    })
+  }
+
+  init();
 };
 
 GroupsController.$inject = ['GroupService', '$state'];
