@@ -5,6 +5,8 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
   vm.groupSearch = groupSearch;
   vm.groupDetail = groupDetail;
   vm.groupAdd = groupAdd;
+  vm.groupMemberList = groupMemberList;
+  vm.groupAddMember = groupAddMember;
 
   function groupSearch (group) {
     let req = {
@@ -32,7 +34,6 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
       method: 'POST',
       headers: UserService.getHeaders()
     };
-
     return $http(req);
   }
 
@@ -43,7 +44,6 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
       method: 'DELETE',
       headers: UserService.getHeaders()
     };
-
     return $http(req);
   }
 
@@ -54,7 +54,24 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
       method: 'PUT',
       headers: UserService.getHeaders()
     };
+    return $http(req);
+  }
 
+  function groupMemberList () {
+    let req = {
+      url: `${SERVER}/group/${group}/members`,
+      method: 'GET',
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+  }
+
+  function groupAddMember () {
+    let req = {
+      url: `${SERVER}/group/${group}/join`,
+      method: 'POST',
+      headers: UserService.getHeaders()
+    };
     return $http(req);
   }
 
