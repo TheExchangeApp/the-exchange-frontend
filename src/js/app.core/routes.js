@@ -25,10 +25,10 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/groupSearch.tpl.html',
       controller: 'GroupsController as groupSearch'
     })
-    .state('root.groupSingle', {
-      url: '/group-single',
-      templateUrl: 'templates/groupSingle.tpl.html',
-      controller: 'GroupsController as groupSingle'
+    .state('root.groupDetail', {
+      url: '/groupDetail/:id',
+      templateUrl: 'templates/groupDetail.tpl.html',
+      controller: 'GroupsController as groupDetail'
     })
     .state('root.groupAdd', {
       url: '/groupAdd',

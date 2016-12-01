@@ -22,17 +22,18 @@
   <button>Submit</button>
 </form>
 
-<div class="search-results" ng-show="groupSearch.showResults">
+<div ng-show="groupSearch.showResults">
   <ul>
     <li ng-repeat="group in groupSearch.groups.results">
-      <p><a class="group-detail" href="#/group-single/{{ group.id }}">
+      <p>
+        <a class="group-detail" href="#/groupDetail/{{ group.id }}">
         {{group.title}} - {{group.category}}
         {{group.description}}
         {{group.day}}
         {{group.childcare}}
-        {{address.street}}
-        {{address.city}}
-        {{address.zip}}
+        {{group.addresses.street}}
+        {{group.addresses.city}}
+        {{group.addresses.zip}}
         </a>
       </p>
     </li>

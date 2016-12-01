@@ -1,23 +1,29 @@
-function GroupService ($http, SERVER, UserService) {
+function GroupService ($http, SERVER, UserService, $stateParams) {
 
   let vm = this;
 
   vm.groupSearch = groupSearch;
-  vm.groupSingle = groupSingle;
+  vm.groupDetail = groupDetail;
   vm.groupAdd = groupAdd;
 
   function groupSearch (group) {
     let req = {
       url: `${SERVER}/group/search`,
-      data: group,
+      params: group,
       method: 'GET',
       headers: UserService.getHeaders()
     }
     return $http(req);
   }
 
-  function groupSingle () {
-    return $http.get(`${SERVER}/group/id`);
+  function groupDetail (group) {
+    let req = {
+      url: `${SERVER}/group/:id`,
+      params: group,
+      method: 'GET',
+      headers: UserService.getHeaders()
+    }
+    return $http(req);
   }
 
   function groupAdd (group) {
@@ -55,5 +61,5 @@ function GroupService ($http, SERVER, UserService) {
 
 };
 
-GroupService.$inject = ['$http', 'SERVER', 'UserService'];
+GroupService.$inject = ['$http', 'SERVER', 'UserService', '$stateParams'];
 export { GroupService };
