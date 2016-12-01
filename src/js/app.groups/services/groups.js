@@ -66,7 +66,7 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
     return $http(req);
   }
 
-  function groupAddMember () {
+  function groupAddMember (user) {
     let req = {
       url: `${SERVER}/group/${group}/join`,
       method: 'POST',

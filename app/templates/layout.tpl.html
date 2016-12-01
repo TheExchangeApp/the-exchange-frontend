@@ -1,32 +1,28 @@
 <header>
-  <nav class="nav">
-    <div class="nav-left">
-      <a class="nav-item" href="#/">The Exchange</a>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+          <!-- <img alt="Brand" src="..."> -->
+          The Exchange
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation">
+          <a class="nav-item" href="#/home" ng-show="layout">About</a></li>
+        <li role="presentation">
+          <a class="nav-item" href="#/groupAdd" ng-show="layout.loggedIn">Add a Group</a></li>
+        <li role="presentation">
+          <a class="nav-item" href="#/groupSearch" ng-show="layout.loggedIn">Search for a Group</a></li>
+        <li role="presentation">
+          <a class="nav-item" href="#/register" ng-show="!layout.loggedIn">Sign Up</a></li>
+        <li role="presentation">
+          <a class="nav-item" href="#/login" ng-show="!layout.loggedIn">Login</a></li>
+        <li role="presentation">
+          <a class="nav-item" href="#/" ng-show="layout.loggedIn" ng-click="layout.logout()">Logout</a></li>
+      </ul>
     </div>
-    <div class="nav-right nav-menu">
-
-      <a class="nav-item" href="#/home"
-         ng-show="layout">About</a>
-
-      <a class="nav-item" href="#/groupAdd"
-         ng-show="layout.loggedIn">Add a Group</a>
-
-      <a class="nav-item" href="#/groupSearch"
-         ng-show="layout.loggedIn">Search for a Group</a>
-
-      <a class="nav-item" href="#/register"
-         ng-show="!layout.loggedIn">Sign Up</a>
-
-      <a class="nav-item" href="#/login"
-         ng-show="!layout.loggedIn">Login</a>
-
-      <a class="nav-item" href="#/"
-         ng-show="layout.loggedIn"
-         ng-click="layout.logout()">Logout</a>
-    </div>
-
-
-
   </nav>
 
 </header>
