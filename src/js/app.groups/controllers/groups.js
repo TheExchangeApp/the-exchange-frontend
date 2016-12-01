@@ -27,7 +27,6 @@ function GroupsController (GroupService, $state) {
   }
 
   function detail (group) {
-    console.log("hello")
     GroupService.groupDetail(group).then((resp) => {
       vm.groups = resp.data;
     })
