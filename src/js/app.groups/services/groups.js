@@ -18,8 +18,7 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
 
   function groupDetail (group) {
     let req = {
-      url: `${SERVER}/group/:id`,
-      params: group,
+      url: `${SERVER}/group/${group}`,
       method: 'GET',
       headers: UserService.getHeaders()
     }
@@ -39,7 +38,7 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
 
   function groupDelete () {
     let req = {
-      url: `${SERVER}/group/id`,
+      url: `${SERVER}/group/:id`,
       data: group,
       method: 'DELETE',
       headers: UserService.getHeaders()
@@ -50,7 +49,7 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
 
   function groupEdit () {
     let req = {
-      url: `${SERVER}/group/id`,
+      url: `${SERVER}/group/:id`,
       data: group,
       method: 'PUT',
       headers: UserService.getHeaders()

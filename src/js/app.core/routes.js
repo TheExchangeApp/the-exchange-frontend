@@ -28,7 +28,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('root.groupDetail', {
       url: '/groupDetail/:id',
       templateUrl: 'templates/groupDetail.tpl.html',
-      controller: 'GroupsController as groupDetail'
+      controller: 'GroupDetailController as groupDetail'
     })
     .state('root.groupAdd', {
       url: '/groupAdd',
