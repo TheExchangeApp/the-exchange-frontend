@@ -15,7 +15,20 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
   function profile () {
     UserService.getProfile($stateParams.id).then((resp) => {
       vm.user = resp.data;
-      console.log(vm.user)
+    })
+  }
+
+  function profileGroup () {
+    UserService.getGroups($stateParams.id).then((resp) => {
+      vm.user = resp.data;
+      console.log('group', vm.user)
+    })
+  }
+
+  function profileMeeting () {
+    UserService.getMeetings($stateParams.id).then((resp) => {
+      vm.user = resp.data;
+      console.log('meeting', vm.user)
     })
   }
 
