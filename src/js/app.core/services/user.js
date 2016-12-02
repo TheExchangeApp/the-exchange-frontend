@@ -6,10 +6,21 @@ function UserService ($http, $cookies, SERVER) {
   this.setUser = setUser;
   this.logout = logout;
   this.getHeaders = getHeaders;
+  this.getProfile = getProfile;
+
 
   function register (user) {
     return $http.post(`${SERVER}/user`, user);
   };
+
+  function getProfile (user) {
+    let req = {
+      url: `${SERVER}/user/${user}`,
+      method: 'GET',
+      headers: getHeaders()
+    }
+    return $http(req);
+  }
 
   function login (user) {
     return $http.post(`${SERVER}/login`, user);
@@ -22,11 +33,13 @@ function UserService ($http, $cookies, SERVER) {
   function logout () {
     $cookies.remove('username');
     $cookies.remove('access_token');
+    $cookies.remove('userId');
   }
 
   function setUser (data) {
     $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
+    $cookies.put('userID', data.id);
   }
 
   function getHeaders () {
