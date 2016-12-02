@@ -39,6 +39,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/groupAdd',
       templateUrl: 'templates/groupAdd.tpl.html',
       controller: 'GroupsController as groupAdd'
+    })
+    .state('root.groupAddMtgs', {
+      url: '/groupAddMtgs',
+      templateUrl: 'templates/groupAddMtgs.tpl.html',
+      controller: 'GroupDetailController as groupAddMtgs'
     });
 
   $urlRouterProvider.otherwise('/home');
