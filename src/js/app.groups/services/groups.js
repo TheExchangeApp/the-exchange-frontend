@@ -7,6 +7,8 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
   vm.groupAdd = groupAdd;
   vm.groupMemberList = groupMemberList;
   vm.groupAddMember = groupAddMember;
+  vm.groupAddMeeting = groupAddMeeting;
+  vm.groupMeetingList = groupMeetingList;
 
   function groupSearch (group) {
     let req = {
@@ -75,6 +77,23 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
     return $http(req);
   }
 
+  function groupAddMeeting (group) {
+    let req = {
+      url: `${SERVER}/group/${group}/meeting`,
+      method: 'POST',
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+  }
+
+  function groupMeetingList (group) {
+    let req = {
+      url: `${SERVER}/group/${group}/meeting`,
+      method: 'GET',
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+  }
 
 };
 
