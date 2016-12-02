@@ -15,7 +15,6 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
   function profile () {
     UserService.getProfile($stateParams.id).then((resp) => {
       vm.user = resp.data;
-      console.log(vm.user)
     })
   }
 
