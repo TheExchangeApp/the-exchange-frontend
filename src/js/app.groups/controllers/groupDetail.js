@@ -5,6 +5,7 @@ function GroupDetailController (GroupService, $state, $stateParams) {
   vm.address = {};
   vm.memberList = memberList;
   vm.addMember = addMember;
+  vm.addMeeting = addMeeting;
 
   function init () {
     GroupService.groupDetail($stateParams.id).then((resp) => {
@@ -17,21 +18,24 @@ function GroupDetailController (GroupService, $state, $stateParams) {
   init();
 
   function addMember () {
-    console.log("hi from AddMembers func")
     GroupService.groupAddMember($stateParams.id).then((resp) => {
-      vm.addMember = resp.data;
-      console.log(vm.addMember);
+        vm.addMember = resp.data;
     });
   };
 
   function memberList () {
-    console.log("hi from members func")
     GroupService.groupMemberList($stateParams.id).then((resp) => {
       vm.memberList = resp.data;
-
-      console.log(vm.memberList);
+      //console.log(vm.memberList);
     });
-  }
+  };
+
+  function addMeeting () {
+    console.log("add meeting was called")
+    // GroupService.groupAddMeeting($stateParams.id).then((resp) => {
+    //   vm.addMeeting = resp.data;
+    // });
+  };
 
 };
 
