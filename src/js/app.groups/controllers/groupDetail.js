@@ -33,6 +33,8 @@ function GroupDetailController (GroupService, $state, $stateParams) {
     console.log("add meeting was called")
     GroupService.groupAddMeeting($stateParams.id).then((resp) => {
       vm.addMeeting = resp.data;
+      console.log(vm.addMeeting)
+
     });
   };
 
