@@ -18,6 +18,20 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
     })
   }
 
+  function profileGroup () {
+    UserService.getGroups($stateParams.id).then((resp) => {
+      vm.user = resp.data;
+      console.log('group', vm.user)
+    })
+  }
+
+  function profileMeeting () {
+    UserService.getMeetings($stateParams.id).then((resp) => {
+      vm.user = resp.data;
+      console.log('meeting', vm.user)
+    })
+  }
+
 };
 
 ProfileController.$inject = ['UserService', 'GroupService', '$state', '$rootScope', '$stateParams'];
