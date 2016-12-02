@@ -1,5 +1,4 @@
 <h3 class="title">Group Detail</h3>
-
 <button ng-click="groupDetail.addMember()">Join Group</button>
 <p>
   {{groupDetail.group.title}} - {{groupDetail.group.category}}
@@ -14,10 +13,8 @@
 <h2>Meetings</h2>
 
 <h2>Members</h2>
-
 <u ng-show='groupDetail.memberList'>
   <li ng-repeat="member in groupDetail.memberList">
     {{member.users.username}}
-
   </li>
 </u>
