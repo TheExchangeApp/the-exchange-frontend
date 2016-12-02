@@ -5,36 +5,38 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#/">
           <!-- <img alt="Brand" src="..."> -->
-          The Exchange
+          THE eXCHANGE
         </a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li role="presentation">
-          <a class="nav-item" href="#/home" ng-show="layout">About</a></li>
+          <a class="nav-item" href="#/home" ng-show="layout">ABOUT</a></li>
         <li role="presentation">
-          <a class="nav-item" href="#/groupAdd" ng-show="layout.loggedIn">Add a Group</a></li>
+          <a class="nav-item" href="#/groupAdd" ng-show="layout.loggedIn">ADD GROUP</a></li>
         <li role="presentation">
-          <a class="nav-item" href="#/groupSearch" ng-show="layout.loggedIn">Search for a Group</a></li>
+          <a class="nav-item" href="#/groupSearch" ng-show="layout.loggedIn">SEARCH GROUP</a></li>
         <li role="presentation">
-          <a class="nav-item" href="#/register" ng-show="!layout.loggedIn">Sign Up</a></li>
+          <a class="nav-item" href="#/register" ng-show="!layout.loggedIn">SIGN UP</a></li>
         <li role="presentation">
-          <a class="nav-item" href="#/login" ng-show="!layout.loggedIn">Login</a></li>
+          <a class="nav-item" href="#/login" ng-show="!layout.loggedIn">LOGIN</a></li>
         <li role="presentation">
-          <a class="nav-item" href="#/" ng-show="layout.loggedIn" ng-click="layout.logout()">Logout</a></li>
+          <a class="nav-item" href="#/" ng-show="layout.loggedIn" ng-click="layout.logout()">LOGOUT</a></li>
       </ul>
     </div>
   </nav>
 
 </header>
 
-<div class="wrapper" ui-view>
-</div>
+<div class="wrapper" ui-view></div>
 
-<footer>
-  <div class="content has-text-centered">
-    Tai & Grace (tm) production.
-  </div>
-  <a href="https://www.instagram.com/" class="socialmedia" title="Facebook" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-  <a href="https://www.twitter.com/" class="socialmedia" title="Facebook" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://www.facebook.com/" class="socialmedia" title="Facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+<footer class="text-center">
+  <span class="social-media">
+    <a href="https://www.instagram.com/" title="Facebook" target="_blank"><i class="fa fa-instagram socialmedia" aria-hidden="true"></i></a>
+    <a href="https://www.twitter.com/" title="Facebook" target="_blank"><i class="fa fa-twitter socialmedia" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="fa fa-facebook-official socialmedia" aria-hidden="true"></i></a>
+  </span>
+  <span class="container-fluid">
+    © Chen & Lee Production - 2016
+  </span>
+
 </footer>

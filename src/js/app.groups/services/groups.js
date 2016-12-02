@@ -57,7 +57,16 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
     return $http(req);
   }
 
-  function groupMemberList () {
+  function groupAddMember (group) {
+    let req = {
+      url: `${SERVER}/group/${group}/join`,
+      method: 'POST',
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+  }
+
+  function groupMemberList (group) {
     let req = {
       url: `${SERVER}/group/${group}/members`,
       method: 'GET',
@@ -66,14 +75,6 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
     return $http(req);
   }
 
-  function groupAddMember (user) {
-    let req = {
-      url: `${SERVER}/group/${group}/join`,
-      method: 'POST',
-      headers: UserService.getHeaders()
-    };
-    return $http(req);
-  }
 
 };
 
