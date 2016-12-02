@@ -1,43 +1,50 @@
+<div class="add-container">
+
 <h3 class="title">Add a Group</h3>
 
 <form name="group-form" ng-submit="groupAdd.add(group)">
   <p>Meeting Information</p>
+
+    <!-- <div class="form-group .col-sm-8">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div> -->
+
   <p class="control">
     <input name="title" type="text" placeholder="Group Title"
-           ng-model="group.title" required />
-  </p>
+           ng-model="group.title" required /></p>
   <p class="control">
     <input name="category" type="text" placeholder="Category"
-           ng-model="group.category" required />
-  </p>
+           ng-model="group.category" required /></p>
   <p class="control">
     <input name="description" type="text" placeholder="Group Description"
-           ng-model="group.description" required />
-  </p>
+           ng-model="group.description" required /></p>
   <p class="control">
     <input name="childcare" type="text" placeholder="Childcare"
-           ng-model="group.childcare" required />
-  </p>
+           ng-model="group.childcare" required /></p>
   <p class="control">
     <input name="day" type="text" placeholder="Meeting Time"
-           ng-model="group.day" required />
-  </p>
-    <p>Meeting Location</p>
+           ng-model="group.day" required /></p>
+
+  <p>Meeting Location</p>
+
   <p class="control">
     <input name="street" type="text" placeholder="Street"
-           ng-model="group.street" required />
-  </p>
+           ng-model="group.street" required /></p>
   <p class="control">
     <input name="city" type="text" placeholder="City"
-           ng-model="group.city" required />
-  </p>
+           ng-model="group.city" required /></p>
   <p class="control">
     <input name="state" type="text" placeholder="State"
-           ng-model="group.state" required />
-  </p>
+           ng-model="group.state" required /></p>
   <p class="control">
     <input name="zip" type="text" placeholder="Zip code"
-           ng-model="group.zip" required />
-  </p>
+           ng-model="group.zip" required /></p>
   <button>Submit</button>
 </form>
+
+</div>
