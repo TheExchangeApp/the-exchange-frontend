@@ -20,6 +20,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/login.tpl.html',
       controller: 'LoginController as login'
     })
+    .state('root.profile', {
+      url: '/profile/:id',
+      templateUrl: 'templates/profile.tpl.html',
+      controller: 'ProfileController as profile'
+    })
     .state('root.groupSearch', {
       url: '/groupSearch',
       templateUrl: 'templates/groupSearch.tpl.html',

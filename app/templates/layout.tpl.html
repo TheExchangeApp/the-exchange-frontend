@@ -16,6 +16,8 @@
         <li role="presentation">
           <a class="nav-item" href="#/groupSearch" ng-show="layout.loggedIn">SEARCH GROUP</a></li>
         <li role="presentation">
+            <a class="nav-item" href="#/profile/{{layout.userID}}" ng-show="layout.loggedIn">PROFILE</a></li>
+        <li role="presentation">
           <a class="nav-item" href="#/register" ng-show="!layout.loggedIn">SIGN UP</a></li>
         <li role="presentation">
           <a class="nav-item" href="#/login" ng-show="!layout.loggedIn">LOGIN</a></li>
