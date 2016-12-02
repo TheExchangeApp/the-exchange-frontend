@@ -7,7 +7,6 @@ function LayoutController ($rootScope, UserService, $cookies) {
   $rootScope.$on('loginChange', (event, data) => {
     vm.loggedIn = UserService.isLoggedIn();
     vm.userID = $cookies.get('userID');
-
   });
 
   function logout () {
