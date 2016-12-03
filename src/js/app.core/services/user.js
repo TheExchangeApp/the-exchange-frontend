@@ -32,7 +32,7 @@ function UserService ($http, $cookies, SERVER) {
     return $http(req);
   }
 
-  // function getMeetings () {
+  // function getMeetings (user) {
   //   let req = {
   //     url: `${SERVER}/user/${user}/meetings`,
   //     method: 'GET',
