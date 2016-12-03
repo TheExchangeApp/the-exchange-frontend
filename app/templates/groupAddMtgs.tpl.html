@@ -2,7 +2,7 @@
 
 <h3 class="title">Add a Meeting</h3>
 
-<form name="mtg-form" ng-submit="groupDetail.addMeeting()">
+<form name="mtg-form" ng-submit="groupAddMeeting.addMeeting()">
   <p>Meeting Information</p>
   <p class="control">
     <input name="curriculum" type="text" placeholder="Meeting Curriculum"
@@ -10,6 +10,6 @@
   <p class="control">
     <input name="time" type="text" placeholder="Meeting Day and Time"
            ng-model="meetings.time" required /></p>
-    <button>Submit</button>       
+    <button>Submit</button>
   </form>
 </div>
