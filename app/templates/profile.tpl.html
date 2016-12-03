@@ -6,15 +6,16 @@
 </p>
 
 <h3>Groups</h3>
-<ul ng-show='profile.profileGroup'>
-  <li ng-repeat="group in profile.profileGroup">
-    {{profile.group.title}}
+<ul>
+  <li ng-repeat="group in profile.groups">
+    {{group.groups.title}}
   </li>
 </ul>
 
 <h3>Meetings</h3>
-<!-- <ul ng-show='groupDetail.memberList'>
-  <li ng-repeat="member in groupDetail.memberList">
-    {{member.users.username}}
+<!-- <ul ng-show='profile.profileMeeting'>
+  <li ng-repeat="meeting in profile.profileGroup">
+    {{profile.meeting.curriculum}}
+    {{profile.meeting.time}}
   </li>
 </ul> -->
