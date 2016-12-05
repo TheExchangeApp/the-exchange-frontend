@@ -2,22 +2,22 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
 
   let vm = this;
 
-  vm.groups = [];
   vm.user = {};
+  vm.groups = [];
+  vm.meetings = [];
   vm.profile = profile;
   vm.profileGroup = profileGroup;
-  // vm.profileMeeting = profileMeeting;
+  vm.profileMeetings = profileMeetings;
 
   function init () {
     profile()
     profileGroup()
-    // profileMeeting()
+    profileMeetings()
   };
 
   init();
 
   function profile () {
-    console.log("profile!")
     UserService.getProfile($stateParams.id).then((resp) => {
       vm.user = resp.data;
       console.log('profile', vm.user);
@@ -25,20 +25,19 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
   }
 
   function profileGroup () {
-    console.log("groups!")
     UserService.getGroups($stateParams.id).then((resp) => {
       vm.groups = resp.data;
       console.log('group', vm.groups)
     })
   }
 
-  // function profileMeeting () {
-  //   console.log("meetings!")
-  //   UserService.getMeetings($stateParams.id).then((resp) => {
-  //     vm.user = resp.data;
-  //     console.log('meeting', vm.user)
-  //   })
-  // }
+  function profileMeetings () {
+    console.log("meetings!")
+    UserService.getMeetings($stateParams.id).then((resp) => {
+      vm.meetings = resp.data;
+      console.log('meeting', vm.meetings)
+    })
+  }
 
 };
 
