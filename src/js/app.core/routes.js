@@ -44,6 +44,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/groupDetail/:id/groupAddMtgs',
       templateUrl: 'templates/groupAddMtgs.tpl.html',
       controller: 'MeetingsController as meetings'
+    })
+    .state('root.meeting', {
+      url: '/meeting/:id',
+      templateUrl: 'templates/meeting.tpl.html',
+      controller: 'MeetingsController as meetingDetail'
     });
 
   $urlRouterProvider.otherwise('/home');

@@ -12,7 +12,14 @@
   <div class="form-group">
     <label for="inputCategory3" class="col-sm-4 control-label">Category</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.category" placeholder="Men, Women, Single ...">
+      <select type="text" class="form-control" placeholder="Men, Women, Single ..." ng-model="group.category">
+        <option>Men</option>
+        <option>Women</option>
+        <option>Mixed</option>
+        <option>Married</option>
+        <option>Single</option>
+        <option>Youth</option>
+      </select>
     </div>
   </div>
 
@@ -26,7 +33,15 @@
   <div class="form-group">
     <label for="inputDay3" class="col-sm-4 control-label">Day of the Week</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.day" placeholder="Monday">
+      <select type="text" class="form-control" placeholder="Monday" class="selectpicker" ng-model="group.day">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+      </select>
     </div>
   </div>
 

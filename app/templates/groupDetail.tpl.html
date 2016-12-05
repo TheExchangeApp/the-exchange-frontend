@@ -18,8 +18,12 @@
 </button>
 <ul>
   <li ng-repeat="meeting in groupDetail.group.meetings">
-    {{meeting.curriculum}}
-    {{meeting.time}}
+    <p>
+      <a class="group-detail" href="#/meeting/{{ meeting.id }}">
+      {{meeting.curriculum}}
+      {{meeting.time}}
+      </a>
+    </p>
   </li>
 </ul>
 
