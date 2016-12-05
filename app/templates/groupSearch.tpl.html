@@ -1,28 +1,5 @@
-<!-- <h3 class="title">Search for a Group</h3>
+<h3 class="col-md-8 col-md-offset-4">Search for groups by filter or by location</h3>
 
-<form name="search-form" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
-
-  <p>What do you want to search by?</p>
-  <p class="control">
-    <input name="title" type="text" placeholder="Group Title"
-           ng-model="group.title" /></p>
-  <p class="control">
-    <input name="category" type="text" placeholder="Group Category"
-           ng-model="group.category" /></p>
-  <p class="control">
-    <input name="description" type="text" placeholder="Group Description"
-           ng-model="group.description" /></p>
-  <p class="control">
-    <input name="day" type="text" placeholder="Day of the Week"
-           ng-model="group.day" /></p>
-  <p class="control">
-    <input name="childcare" type="number" placeholder="Has Childcare"
-           ng-model="group.childcare" /></p>
-
-  <button>Submit</button>
-</form> -->
-
-<h3>Search for groups by filter or by location</h3>
 <form class="form-horizontal" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
 
   <div class="form-group">
@@ -67,7 +44,7 @@
   </div>
 </form>
 
-<div ng-show="groupSearch.showResults">
+<div ng-show="groupSearch.showResults" class="col-md-8 col-md-offset-4">
   <ul>
     <li ng-repeat="group in groupSearch.groups.results">
       <p>
@@ -84,4 +61,9 @@
       </p>
     </li>
   </ul>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-default">NEW SEARCH</button>
+    </div>
+  </div>
 </div>
