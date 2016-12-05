@@ -87,6 +87,16 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
     return $http(req);
   }
 
+  function meetingAddMember (group) {
+    let req = {
+      url: `${SERVER}/group/${group.group_id}/meeting`,
+      method: 'POST',
+      headers: UserService.getHeaders(),
+      params: group
+    };
+    return $http(req);
+  }
+
   function groupMeetingList (group) {
     let req = {
       url: `${SERVER}/group/${group}/meeting`,
