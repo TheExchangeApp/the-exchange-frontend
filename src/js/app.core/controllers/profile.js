@@ -32,7 +32,6 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
   }
 
   function profileMeetings () {
-    console.log("meetings!")
     UserService.getMeetings($stateParams.id).then((resp) => {
       vm.meetings = resp.data;
       console.log('meeting', vm.meetings)
