@@ -5,9 +5,9 @@
   {{groupDetail.group.description}}
   {{groupDetail.group.day}}
   {{groupDetail.group.childcare}}
-  {{groupDetail.address.street}}
-  {{groupDetail.address.city}}
-  {{groupDetail.address.zip}}
+  {{groupDetail.group.address.street}}
+  {{groupDetail.group.address.city}}
+  {{groupDetail.group.address.zip}}
 </p>
 
 <h2>Meetings</h2>
@@ -16,6 +16,12 @@
   <a ui-sref="root.groupAddMtgs({ id: groupDetail.id })">
     Add Meeting</a>
 </button>
+<ul>
+  <li ng-repeat="meeting in groupDetail.group.meetings">
+    {{meeting.curriculum}}
+    {{meeting.time}}
+  </li>
+</ul>
 
 <h2>Members</h2>
 <ul ng-show='groupDetail.memberList'>
