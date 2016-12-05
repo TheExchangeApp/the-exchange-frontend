@@ -16,6 +16,14 @@
   <a ui-sref="root.groupAddMtgs({ id: groupDetail.id })">
     Add Meeting</a>
 </button>
+<ul>
+  <li ng-repeat="meeting in meetings['0'].meetings['0']">
+    {{group.group['0'].meetings[11].curriculum}}
+  </li>
+</ul>
+<p>
+  {{group.group['0'].meetings['11'].curriculum}}
+</p>
 
 <h2>Members</h2>
 <ul ng-show='groupDetail.memberList'>
