@@ -9,8 +9,9 @@ function GroupDetailController (GroupService, $state, $stateParams) {
 
   function init () {
     GroupService.groupDetail(vm.id).then((resp) => {
-      console.log(resp.data);
-      vm.group = resp.data.group;
+      vm.group = resp.data;
+      console.log(vm.group);
+
     });
     memberList()
   };
