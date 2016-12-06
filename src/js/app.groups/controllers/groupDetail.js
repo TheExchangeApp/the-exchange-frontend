@@ -11,7 +11,7 @@ function GroupDetailController (GroupService, $stateParams) {
   function init () {
     GroupService.groupDetail(vm.id).then((resp) => {
       vm.group = resp.data.group[0];
-      console.log(vm.group);
+      // console.log(vm.group);
 
     });
     memberList()
@@ -19,9 +19,10 @@ function GroupDetailController (GroupService, $stateParams) {
 
   init();
 
-  function addMeeting (meeting) {
-    meeting.group_id = vm.id;
-    GroupService.groupAddMeeting(meeting).then((resp) => {
+  function addMeeting (mtg) {
+    console.log("meeting function")
+    mtg.group_id = vm.id;
+    GroupService.groupAddMeeting(mtg).then((resp) => {
       vm.addMeeting = resp.data;
       console.log(vm.addMeeting)
     });

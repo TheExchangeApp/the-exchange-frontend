@@ -43,7 +43,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('root.groupAddMtgs', {
       url: '/groupDetail/:id/groupAddMtgs',
       templateUrl: 'templates/groupAddMtgs.tpl.html',
-      controller: 'MeetingsController as meetings'
+      controller: 'GroupDetailController as meetings'
     })
     .state('root.meeting', {
       url: '/meeting/:id',
