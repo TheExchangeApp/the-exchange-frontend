@@ -1,3 +1,17 @@
 <h3>Meeting</h3>
-
 <button ng-click="meetingDetail.addMtgMember()">JOIN</button>
+<p>
+  {{meetingDetail.meeting.curriculum}}
+  {{meetingDetail.meeting.time}}
+</p>
+
+<div class="notes">
+  <h4>Notes</h4>
+  <ul>
+    <!-- <li ng-repeat="meetingDetail.note.noteList"></li> -->
+  </ul>
+  <form class="notes" ng-submit="meetingDetail.addNote(note)">
+    <textarea ng-model="note.note"></textarea>
+    <button>Add Note</button>
+  </form>
+</div>
