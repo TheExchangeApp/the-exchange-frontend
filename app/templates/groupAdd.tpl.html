@@ -1,50 +1,92 @@
-<div class="add-container">
+<h3 class="col-md-10 col-md-offset-5">Add a Groups</h3>
 
-<h3 class="title">Add a Group</h3>
+<form class="form-horizontal" name="group-form" ng-submit="groupAdd.add(group)">
 
-<form name="group-form" ng-submit="groupAdd.add(group)">
-  <p>Meeting Information</p>
+  <p>Information</p>
 
-    <!-- <div class="form-group .col-sm-8">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  <div class="form-group">
+    <label for="inputTitle3" class="col-sm-4 control-label">Title</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" ng-model="group.title" placeholder="Title">
     </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputCategory3" class="col-sm-4 control-label">Category</label>
+    <div class="col-sm-4">
+      <select type="text" class="form-control" placeholder="Men, Women, Single ..." ng-model="group.category">
+        <option>Men</option>
+        <option>Women</option>
+        <option>Mixed</option>
+        <option>Married</option>
+        <option>Single</option>
+        <option>Youth</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputDescription3" class="col-sm-4 control-label">Description</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" ng-model="group.description" placeholder="Book of the Bible  (i.e. Daniel)">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputDay3" class="col-sm-4 control-label">Day of the Week</label>
+    <div class="col-sm-4">
+      <select type="text" class="form-control" placeholder="Monday" class="selectpicker" ng-model="group.day">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputChildcare3" class="col-sm-4 control-label">Childcare</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" ng-model="group.childcare" placeholder="Yes / No">
+    </div>
+  </div>
+
+  <p>Location</p>
+
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div> -->
+      <label for="inputStreet3" class="col-sm-4 control-label">Street</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" ng-model="group.street" placeholder="Peachtree Street">
+      </div>
+    </div>
 
-  <p class="control">
-    <input name="title" type="text" placeholder="Group Title"
-           ng-model="group.title" required /></p>
-  <p class="control">
-    <input name="category" type="text" placeholder="Category"
-           ng-model="group.category" required /></p>
-  <p class="control">
-    <input name="description" type="text" placeholder="Group Description"
-           ng-model="group.description" required /></p>
-  <p class="control">
-    <input name="childcare" type="text" placeholder="Childcare"
-           ng-model="group.childcare" required /></p>
-  <p class="control">
-    <input name="day" type="text" placeholder="Meeting Time"
-           ng-model="group.day" required /></p>
+    <div class="form-group">
+      <label for="inputCity3" class="col-sm-4 control-label">City</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" ng-model="group.city" placeholder="Atlanta">
+      </div>
+    </div>
 
-  <p>Meeting Location</p>
+    <div class="form-group">
+      <label for="inputState3" class="col-sm-4 control-label">State</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" ng-model="group.state" placeholder="GA">
+      </div>
+    </div>
 
-  <p class="control">
-    <input name="street" type="text" placeholder="Street"
-           ng-model="group.street" required /></p>
-  <p class="control">
-    <input name="city" type="text" placeholder="City"
-           ng-model="group.city" required /></p>
-  <p class="control">
-    <input name="state" type="text" placeholder="State"
-           ng-model="group.state" required /></p>
-  <p class="control">
-    <input name="zip" type="text" placeholder="Zip code"
-           ng-model="group.zip" required /></p>
-  <button>Submit</button>
+    <div class="form-group">
+      <label for="inputState3" class="col-sm-4 control-label">Zip Code</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" ng-model="group.zip" placeholder="30320">
+      </div>
+    </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-10">
+      <button type="submit" class="btn btn-default">SUBMIT</button>
+    </div>
+  </div>
 </form>
-
-</div>
