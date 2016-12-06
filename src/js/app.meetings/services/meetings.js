@@ -9,19 +9,9 @@ function MeetingService ($http, SERVER, UserService, GroupService, $stateParams)
       url: `${SERVER}/meeting/${meeting}/join`,
       method: 'POST',
       headers: UserService.getHeaders(),
-      // params: meeting
     };
     return $http(req);
   }
-
-  // function groupMeetingList (group) {
-  //   let req = {
-  //     url: `${SERVER}/group/${group}/meeting`,
-  //     method: 'GET',
-  //     headers: UserService.getHeaders()
-  //   };
-  //   return $http(req);
-  // }
 
 };
 
