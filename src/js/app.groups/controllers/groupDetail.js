@@ -1,4 +1,4 @@
-function GroupDetailController (GroupService, $state, $stateParams) {
+function GroupDetailController (GroupService, $stateParams) {
 
   let vm = this;
   vm.id = $stateParams.id;
@@ -6,6 +6,7 @@ function GroupDetailController (GroupService, $state, $stateParams) {
   vm.address = {};
   vm.memberList = memberList;
   vm.addMember = addMember;
+  vm.addMeeting = addMeeting;
 
   function init () {
     GroupService.groupDetail(vm.id).then((resp) => {
@@ -17,6 +18,14 @@ function GroupDetailController (GroupService, $state, $stateParams) {
   };
 
   init();
+
+  function addMeeting (meeting) {
+    meeting.group_id = vm.id;
+    GroupService.groupAddMeeting(meeting).then((resp) => {
+      vm.addMeeting = resp.data;
+      console.log(vm.addMeeting)
+    });
+  };
 
   function addMember () {
     GroupService.groupAddMember(vm.id).then((resp) => {
@@ -32,5 +41,5 @@ function GroupDetailController (GroupService, $state, $stateParams) {
 
 };
 
-GroupDetailController.$inject = ['GroupService', '$state', '$stateParams'];
+GroupDetailController.$inject = ['GroupService', '$stateParams'];
 export { GroupDetailController };
