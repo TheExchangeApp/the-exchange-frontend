@@ -4,26 +4,41 @@ function MeetingsController (MeetingService, $stateParams) {
   vm.id = $stateParams.id;
   vm.meeting = {};
   vm.member = {};
+  vm.note = [];
   vm.addMtgMember = addMtgMember;
+  vm.addNote = addNote;
+  vm.allNotes = {};
+
+  function init () {
+    MeetingService.groupMeetingList(vm.id).then((resp) => {
+      vm.meeting = resp.data.meeting;
+    });
+
+    // getNotes();
+  };
+
+  init();
 
   function addMtgMember () {
-    console.log("hi from meeting")
     MeetingService.meetingAddMember(vm.id).then((resp) => {
       vm.member = resp.data;
       console.log(vm.member)
-
     });
   };
 
-  // function meetingDetail (meeting) {
-  //   console.log("meeting detail was called")
-  //   meeting.group_id = vm.id;
-  //   GroupService.groupMeetingList(meeting).then((resp) => {
-  //     vm.meetingDetail = resp.data;
-  //     console.log(vm.meetingDetail)
-  //   });
-  // };
-  //
+  function addNote (note) {
+    MeetingService.addANote(note, vm.id).then((resp) => {
+      vm.note = resp.data;
+      console.log(vm.note);
+    })
+  };
+
+  function getNotes () {
+    MeetingService.noteList(vm.id).then((resp) => {
+      vm.allNotes = resp.data;
+      console.log(vm.allNotes);
+    })
+  };
 
 };
 
