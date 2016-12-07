@@ -28,7 +28,7 @@ function MeetingService ($http, SERVER, UserService, GroupService, $stateParams)
     let req = {
       url: `${SERVER}/meeting/${meeting}/note`,
       method: 'POST',
-      params: note,
+      params: { note: note },
       headers: UserService.getHeaders()
     };
     return $http(req);
