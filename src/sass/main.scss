@@ -27,26 +27,69 @@
    width: 100%;
   }
 
-  // .carousel-caption {
-  //   font-size: 60px;
-  //   font-family: 'Open Sans', sans-serif;
-  // }
-
   .imageAndText {
     position: relative;
   }
   .imageAndText .col {
     position: absolute; z-index: 1; top: 0; left: 0;
   }
-  .moto {
-    font-size: 60px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    color: white;
 
+  .moto {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: white;
+    margin-left: 200px;
+    margin-top: 300px;
+    .x {
+      font-size: 100px;
+    }
+  }
+
+  h3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: 500;
+  }
+  h4, .media {
+    font-weight: 300;
+  }
+
+  label {
+    font-weight: 300;
+  }
+
+  .thumbnail {
+    margin-top: 25px;
+    height: 500px;
+    img{
+      height: 310px;
+    }
+    .caption {
+      margin-top: 10px;
+      font-weight: 300px;
+      // color: green;
+    }
+  }
+  .profile-body {
+    margin-left: 20px;
+  }
+
+  .group-body {
+    margin-left: 20px;
+  }
+
+  .meetingpic {
+    width: 33%;
+    height: 175px;
+  }
+  textarea {
+    width: 80%;
   }
 
   .fa {
+    margin-top: 50px;
     width: 30px;
     height: 30px;
   }

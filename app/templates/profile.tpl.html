@@ -1,34 +1,37 @@
-<div class="text-center">
-      <h3>HELLO {{ profile.user.name }}</h3>
-      <!-- <p>
-        {{ profile.user.username }}
-        {{ profile.user.email }}
-      </p> -->
-      <p>Groups and Meetings</p>
+<div class="col-md-12">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        <img src="https://s-media-cache-ak0.pinimg.com/236x/37/4f/e8/374fe86bcafddb975f16fbc4902331af.jpg">
+        <div class="caption">
+          <p>Disciple: {{ profile.user.username }}</p>
+          <p>Write Letters To: {{ profile.user.email }}</p>
+        </div>
+    </div>
+  </div>
+
+  <div class="text-left col-md-6 profile-body">
+    <h3>{{ profile.user.name }} belongs to the following:</h3>
+    <h4>Your Group(s)</h4>
+      <div class="media">
+        <ul class="media-body">
+          <li class="media-heading" ng-repeat="group in profile.groups">
+            <a href="#/groupDetail/{{ group.groups.id }}">
+              {{group.groups.title}} - {{group.groups.description}}
+           </a>
+          </li>
+        </ul>
+      </div>
+
+    <h4>Meeting(s)</h4>
+      <div class="media">
+        <ul class="media-body">
+          <li class="media-heading" ng-repeat="meeting in profile.meetings">
+            <a href="#/meeting/{{ meeting.meetings.id }}">
+              {{meeting.meetings.curriculum}}
+            </a>
+          </li>
+        </ul>
+      </div>
 </div>
 
-<div class="text-center">
-  <h3>Groups</h3>
-  <div class="media">
-    <ul class="media-body">
-      <li class="media-heading" ng-repeat="group in profile.groups">
-        <a href="#/groupDetail/{{ group.groups.id }}">
-          {{group.groups.title}} - {{group.groups.description}}
-       </a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="text-center">
-  <h3>Meetings</h3>
-  <div class="media">
-    <ul class="media-body">
-      <li class="media-heading" ng-repeat="meeting in profile.meetings">
-        <a href="#/meeting/{{ meeting.meetings.id }}">
-          {{meeting.meetings.curriculum}}
-        </a>
-      </li>
-    </ul>
-  </div>
 </div>
