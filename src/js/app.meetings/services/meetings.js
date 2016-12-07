@@ -43,6 +43,25 @@ function MeetingService ($http, SERVER, UserService, GroupService, $stateParams)
     return $http(req);
   }
 
+  function addObj () {
+    let req = {
+      url: `${SERVER}/meeting/${meeting}/objective`,
+      method: 'POST',
+      params: data,
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+  }
+
+  function listObj () {
+    let req = {
+      url: `${SERVER}/meeting/${meeting}/objective`,
+      method: 'GET',
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+  }
+
 };
 
 MeetingService.$inject = ['$http', 'SERVER', 'UserService', 'GroupService', '$stateParams'];
