@@ -8,7 +8,7 @@
             <p>When: {{groupDetail.group.day}}</p>
             <p>Where: {{groupDetail.group.street}} {{groupDetail.group.address.city}}, {{groupDetail.group.address.state}} {{groupDetail.group.address.zip}} </p>
           </div>
-        <button ng-click="groupDetail.addMember()">Join Group</button>
+        <button ng-hide="groupDetail.isAMember" ng-click="groupDetail.addMember()">Join Group</button>
     </div>
   </div>
 
