@@ -5,7 +5,7 @@
 
 <div class="col-md-12">
 
-  <div class="col-md-4 text-left">
+  <div class="col-md-4 text-left panel panel-default">
     <h3>From the Group Leader</h3>
     <p>Objective: {{meetingDetail.meeting.objective}}</p>
     <form class="notes" ng-submit="meetingDetail.inputObj()">
@@ -16,7 +16,7 @@
 
   <img class="col-md-4 meetingpic" src="http://lh4.ggpht.com/_m9qne3nmA8s/R88YZ0BdI6I/AAAAAAAABYA/iY6Z6H0O1MY/3608.jpg?imgmax=640">
 
-  <div class="col-md-4 notes">
+  <div class="col-md-4 notes panel panel-default">
     <h3>My Notes and Comments</h3>
     <ul class="meeting-note">
       <li ng-repeat="note in meetingDetail.allNotes" class="note">
