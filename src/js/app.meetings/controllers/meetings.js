@@ -14,7 +14,7 @@ function MeetingsController (MeetingService, $stateParams) {
       vm.meeting = resp.data.meeting;
     });
 
-    // getNotes();
+    getNotes();
   };
 
   init();
@@ -36,7 +36,7 @@ function MeetingsController (MeetingService, $stateParams) {
 
   function getNotes () {
     MeetingService.noteList(vm.id).then((resp) => {
-      vm.allNotes = resp.data;
+      vm.allNotes = resp.data[0];
       console.log(vm.allNotes);
     })
   };
