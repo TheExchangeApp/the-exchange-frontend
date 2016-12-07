@@ -1,17 +1,29 @@
-<h3 class="text-center">Meeting</h3>
-<button ng-click="meetingDetail.addMtgMember()">JOIN</button>
-<p>
-  {{meetingDetail.meeting.curriculum}}
-  {{meetingDetail.meeting.time}}
-</p>
+<div class="text-center">
+  <h3>Meeting</h3>
+    <button ng-click="meetingDetail.addMtgMember()">JOIN</button>
+      <p>
+        {{meetingDetail.meeting.curriculum}}
+        {{meetingDetail.meeting.time}}
+      </p>
+</div>
 
-<div class="notes">
-  <h4>Notes</h4>
-  <ul>
-    <!-- <li ng-repeat="meetingDetail.note.noteList"></li> -->
-  </ul>
-  <form class="notes" ng-submit="meetingDetail.addNote(note)">
-    <textarea ng-model="note.note"></textarea>
-    <button>Add Note</button>
-  </form>
+<div class="col-md-12">
+
+  <div class="col-md-4 text-left">
+    <h3>From the Group Leader</h3>
+  </div>
+
+  <img class="col-md-4 meetingpic" src="http://lh4.ggpht.com/_m9qne3nmA8s/R88YZ0BdI6I/AAAAAAAABYA/iY6Z6H0O1MY/3608.jpg?imgmax=640">
+
+  <div class="col-md-4 notes">
+    <h3>My Notes and Comments</h3>
+    <!-- <ul>
+      <li ng-repeat="meetingDetail.note.noteList"></li>
+    </ul> -->
+    <form class="notes" ng-submit="meetingDetail.addNote(note)">
+        <textarea ng-model="note.note"></textarea>
+        <button>Add Note</button>
+    </form>
+  </div>
+
 </div>
