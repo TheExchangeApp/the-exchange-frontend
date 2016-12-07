@@ -5,9 +5,13 @@ function MeetingsController (MeetingService, $stateParams, $scope) {
   vm.meeting = {};
   vm.member = {};
   vm.note = '';
+  vm.allNotes = [];
+  vm.obj = [];
+  vm.allObj = [];
   vm.addMtgMember = addMtgMember;
   vm.addNote = addNote;
-  vm.allNotes = [];
+  vm.inputObj = inputObj;
+  vm.getObj = getObj;
 
   function init () {
     MeetingService.groupMeetingList(vm.id).then((resp) => {
@@ -15,6 +19,7 @@ function MeetingsController (MeetingService, $stateParams, $scope) {
     });
 
     getNotes();
+    getObj();
   };
 
   init();
@@ -39,6 +44,22 @@ function MeetingsController (MeetingService, $stateParams, $scope) {
     MeetingService.noteList(vm.id).then((resp) => {
       vm.allNotes = resp.data;
       console.log(vm.allNotes);
+    })
+  };
+
+  function inputObj () {
+    MeetingService.addObj(vm.obj, vm.id).then((resp) => {
+      vm.obj = resp.data;
+      // vm.allObj.push(vm.obj);
+      // vm.obj = '';
+      console.log(vm.obj);
+    });
+  }
+
+  function getObj () {
+    MeetingService.listObj(vm.id).then((resp) => {
+      vm.allObj = resp.data;
+      console.log(vm.allObj);
     })
   };
 

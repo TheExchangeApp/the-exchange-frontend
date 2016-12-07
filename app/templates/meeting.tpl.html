@@ -7,6 +7,11 @@
 
   <div class="col-md-4 text-left">
     <h3>From the Group Leader</h3>
+    <p>Objective: {{meetingDetail.meeting.objective}}</p>
+    <form class="notes" ng-submit="meetingDetail.inputObj()">
+        <textarea ng-model="meetingDetail.obj"></textarea>
+        <button>Add Objective</button>
+    </form>
   </div>
 
   <img class="col-md-4 meetingpic" src="http://lh4.ggpht.com/_m9qne3nmA8s/R88YZ0BdI6I/AAAAAAAABYA/iY6Z6H0O1MY/3608.jpg?imgmax=640">
