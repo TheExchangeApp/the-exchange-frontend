@@ -1,10 +1,6 @@
 <div class="text-center">
-  <h3>Meeting</h3>
+  <h3>{{meetingDetail.meeting.curriculum}}</h3>
     <button ng-click="meetingDetail.addMtgMember()">JOIN</button>
-      <p>
-        {{meetingDetail.meeting.curriculum}}
-        {{meetingDetail.meeting.time}}
-      </p>
 </div>
 
 <div class="col-md-12">
@@ -17,11 +13,14 @@
 
   <div class="col-md-4 notes">
     <h3>My Notes and Comments</h3>
-    <!-- <ul>
-      <li ng-repeat="meetingDetail.note.noteList"></li>
-    </ul> -->
-    <form class="notes" ng-submit="meetingDetail.addNote(note)">
-        <textarea ng-model="note.note"></textarea>
+    <ul class="meeting-note">
+      <li ng-repeat="note in meetingDetail.allNotes" class="note">
+        {{note.note}}
+        {{note.created_at}}
+      </li>
+    </ul>
+    <form class="notes" ng-submit="meetingDetail.addNote()">
+        <textarea ng-model="meetingDetail.note"></textarea>
         <button>Add Note</button>
     </form>
   </div>

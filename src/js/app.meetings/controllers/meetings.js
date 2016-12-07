@@ -1,13 +1,13 @@
-function MeetingsController (MeetingService, $stateParams) {
+function MeetingsController (MeetingService, $stateParams, $scope) {
 
   let vm = this;
   vm.id = $stateParams.id;
   vm.meeting = {};
   vm.member = {};
-  vm.note = [];
+  vm.note = '';
   vm.addMtgMember = addMtgMember;
   vm.addNote = addNote;
-  vm.allNotes = {};
+  vm.allNotes = [];
 
   function init () {
     MeetingService.groupMeetingList(vm.id).then((resp) => {
@@ -26,22 +26,23 @@ function MeetingsController (MeetingService, $stateParams) {
     });
   };
 
-  function addNote (note) {
-    console.log("hi from note")
-    MeetingService.addANote(note, vm.id).then((resp) => {
+  function addNote () {
+    MeetingService.addANote(vm.note, vm.id).then((resp) => {
       vm.note = resp.data;
+      vm.allNotes.push(vm.note);
+      vm.note = '';
       console.log(vm.note);
-    })
+    });
   };
 
   function getNotes () {
     MeetingService.noteList(vm.id).then((resp) => {
-      vm.allNotes = resp.data[0];
+      vm.allNotes = resp.data;
       console.log(vm.allNotes);
     })
   };
 
 };
 
-MeetingsController.$inject = ['MeetingService', '$stateParams'];
+MeetingsController.$inject = ['MeetingService', '$stateParams', '$scope'];
 export { MeetingsController };

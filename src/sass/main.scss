@@ -82,10 +82,18 @@
 
   .meetingpic {
     width: 33%;
-    height: 175px;
+    height: 170px;
+  }
+
+  .meeting-note {
+    padding-left: 0px;
+  }
+
+  .note {
+    padding-bottom: 15px;  
   }
   textarea {
-    width: 80%;
+    width: 90%;
   }
 
   .fa {
@@ -97,5 +105,9 @@
   footer {
     font-weight: 100;
     padding: 35px;
+  }
+
+  .button {
+    text-decoration: none;
   }
 }
