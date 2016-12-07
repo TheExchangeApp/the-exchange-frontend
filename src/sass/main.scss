@@ -27,11 +27,6 @@
    width: 100%;
   }
 
-  // .carousel-caption {
-  //   font-size: 60px;
-  //   font-family: 'Open Sans', sans-serif;
-  // }
-
   .imageAndText {
     position: relative;
   }
@@ -46,7 +41,33 @@
 
   }
 
+  h3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: 500;
+  }
+
+  label {
+    font-weight: 300;
+  }
+
+  .thumbnail {
+    margin-top: 25px;
+    height: 400px;
+    img{
+      height: 310px;
+    }
+    .caption {
+      margin-top: 10px;
+      // color: green;
+    }
+  }
+  .profile-body {
+    margin-left: 20px;
+  }
+
   .fa {
+    margin-top: 50px;
     width: 30px;
     height: 30px;
   }
