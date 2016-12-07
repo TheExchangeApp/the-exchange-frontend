@@ -1,21 +1,34 @@
-<h2 class="title">Hello {{ profile.user.name }}</h2>
-<p>
-  {{ profile.user.img_url }}
-  {{ profile.user.username }}
-  {{ profile.user.email }}
-</p>
+<div class="text-center">
+      <h3>HELLO {{ profile.user.name }}</h3>
+      <!-- <p>
+        {{ profile.user.username }}
+        {{ profile.user.email }}
+      </p> -->
+      <p>Groups and Meetings</p>
+</div>
 
-<h3>Groups</h3>
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="group in profile.groups">
-    {{group.groups.title}}
-  </li>
-</ul>
+<div class="text-center">
+  <h3>Groups</h3>
+  <div class="media">
+    <ul class="media-body">
+      <li class="media-heading" ng-repeat="group in profile.groups">
+        <a href="#/groupDetail/{{ group.groups.id }}">
+          {{group.groups.title}} - {{group.groups.description}}
+       </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<h3>Meetings</h3>
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="meeting in profile.meetings">
-    {{meeting.meetings.curriculum}}
-    {{meeting.meetings.time}}
-  </li>
-</ul>
+<div class="text-center">
+  <h3>Meetings</h3>
+  <div class="media">
+    <ul class="media-body">
+      <li class="media-heading" ng-repeat="meeting in profile.meetings">
+        <a href="#/meeting/{{ meeting.meetings.id }}">
+          {{meeting.meetings.curriculum}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

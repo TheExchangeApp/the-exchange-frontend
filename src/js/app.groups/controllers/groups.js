@@ -25,22 +25,19 @@ function GroupsController (GroupService, $state) {
     GroupService.groupSearch(group).then((resp) => {
       vm.groups = resp.data;
       vm.showResults = true;
-      googlelocator(address);
+      googleLocator(address);
     });
   }
 
-  function googlelocator (address) {
+  function googleLocator (address) {
     var geocoder;
     var map;
     geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': address}, function(results, status) {
-      console.log('results', results)
+      console.log('results', results[0])
       if (status == 'OK') {
-        results[0].geometry.location;
-        // var marker = new google.maps.Marker({
-        //   map: map,
-        //   position: results[0].geometry.location
-        // });
+        console.log(results[0].geometry.location.lat());
+        console.log(results[0].geometry.location.lng());
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }

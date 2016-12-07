@@ -27,6 +27,7 @@ function MeetingsController (MeetingService, $stateParams) {
   };
 
   function addNote (note) {
+    console.log("hi from note")
     MeetingService.addANote(note, vm.id).then((resp) => {
       vm.note = resp.data;
       console.log(vm.note);
