@@ -1,3 +1,4 @@
+import moment from 'moment';
 function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
 
   let vm = this;
@@ -9,13 +10,29 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
   vm.addMember = addMember;
   vm.addMeeting = addMeeting;
   vm.isAMember = true;
+  // vm.convertTime = convertTime;
+  vm.meeting = {};
+
+  // function convertTime (meeting) {
+  //      vm.group.meetings = meeting
+  //     vm.group.meetings.time = moment(vm.group.meetings[0].time).format("h:mm a");
+  //
+  //     let times = moment(meeting).format("h:mm a");
+  //
+  // } {{ groupDetail.convertTime(meeting) }}
 
   function init () {
     GroupService.groupDetail(vm.id).then((resp) => {
       vm.group = resp.data.group[0];
-      // console.log(vm.group);
+      console.log(vm.group);
+      vm.group.meetings.forEach((meeting) => {
+        meeting.time = moment(meeting.time).format("h:mm a");
+      });
+
+      memberList();
+      // convertTime();
     });
-    memberList();
+
   };
 
   init();
