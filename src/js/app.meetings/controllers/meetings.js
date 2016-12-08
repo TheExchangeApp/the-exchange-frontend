@@ -20,10 +20,16 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
       vm.meeting = resp.data[0];
       console.log(vm.meeting);
       let mtgBool = false;
-      if (Number(vm.userID) === vm.meeting.users[0].user_id) { mtgBool = true; }
+
+      console.log("vm.userID is: ", vm.userID, "vm.meeting.users is: ", vm.meeting.users[0].id);
+
+      vm.meeting.users.forEach(user => {
+        if (Number(vm.userID) === user.id) { mtgBool = true; }
+      });
+
       if (!mtgBool) { vm.isMember = false; }
     });
-
+    console.log(vm.isMember);
     getNotes();
     getObj();
   };
