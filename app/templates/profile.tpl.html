@@ -14,17 +14,17 @@
     <h4>Group(s) and Meeting(s)</h4>
       <div class="media">
         <ul class="media-body">
-          <li class="media-heading" ng-repeat="group in profile.groups">
+          <li class="media-heading" ng-repeat="group in profileGroup.groups">
             <a href="#/groupDetail/{{ group.groups.id }}">
-              {{group.groups.title}} - {{group.groups.description}}
+              {{groups.title}} - {{groups.description}}
            </a>
-           <ul class="media-body">
+           <!-- <ul class="media-body">
              <li class="media-heading" ng-repeat="meeting in profile.meetings">
                <a href="#/meeting/{{ meeting.meetings.id }}">
                  {{meeting.meetings.curriculum}}
                </a>
              </li>
-           </ul>
+           </ul> -->
           </li>
         </ul>
       </div>

@@ -8,7 +8,7 @@ function UserService ($http, $cookies, SERVER) {
   this.getHeaders = getHeaders;
   this.getProfile = getProfile;
   this.getGroups = getGroups;
-  this.getMeetings = getMeetings;
+  // this.getMeetings = getMeetings;
 
   function register (user) {
     return $http.post(`${SERVER}/user`, user);
@@ -25,21 +25,21 @@ function UserService ($http, $cookies, SERVER) {
 
   function getGroups (user) {
     let req = {
-      url: `${SERVER}/user/${user}/groups`,
+      url: `${SERVER}/mygroups`,
       method: 'GET',
       headers: getHeaders()
     }
     return $http(req);
   }
 
-  function getMeetings (user) {
-    let req = {
-      url: `${SERVER}/user/${user}/meetings`,
-      method: 'GET',
-      headers: getHeaders()
-    }
-    return $http(req);
-  }
+  // function getMeetings (user) {
+  //   let req = {
+  //     url: `${SERVER}/mygroups`,
+  //     method: 'GET',
+  //     headers: getHeaders()
+  //   }
+  //   return $http(req);
+  // }
 
   function login (user) {
     return $http.post(`${SERVER}/login`, user);
