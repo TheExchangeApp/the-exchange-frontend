@@ -35,8 +35,6 @@ function GroupsController (GroupService, $state) {
         group.lat = results[0].geometry.location.lat();
         group.lng = results[0].geometry.location.lng();
         addFinishedGroup(group);
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
       }
     });
   }
@@ -46,12 +44,11 @@ function GroupsController (GroupService, $state) {
       var map;
       geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address},  function(results, status) {
-        // console.log('results', results[0])
         if (status == 'OK') {
           group.lat = results[0].geometry.location.lat();
           group.lng = results[0].geometry.location.lng();
           findSearchedGroup(group);
-        } 
+        }
       });
     }
 
@@ -64,20 +61,13 @@ function GroupsController (GroupService, $state) {
     }
 
     function findSearchedGroup (group) {
+
       GroupService.groupSearch(group).then((resp) => {
         vm.groups = resp.data;
         console.log(group)
         vm.showResults = true;
       });
     }
-
-    // function kids (group, care) {
-    //   if (group.childcare == true) {
-    //     return "yes";
-    //   } else {
-    //     return "no";
-    //   };
-    // };
 
   function detail (group) {
     GroupService.groupDetail(group).then((resp) => {
