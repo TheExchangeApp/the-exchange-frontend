@@ -1,4 +1,4 @@
-*{
+* {
    box-sizing: border-box;
    font-family: 'Open Sans', sans-serif;
    list-style-type: none;
@@ -85,8 +85,9 @@
   }
 
   .meetingpic {
-    width: 33%;
-    height: 170px;
+    width: 50%;
+    height: 100px;
+    margin: 8% 25% 8% 25%;
   }
 
   .meeting-note {
@@ -113,5 +114,10 @@
 
   .button {
     text-decoration: none;
+  }
+
+  .meetings {
+    background-image: url("https://1888.org/images/2013/02/24/10170/open-bible.jpg");
+    background-size: cover;
   }
 }
