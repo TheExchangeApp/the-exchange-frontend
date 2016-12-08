@@ -51,9 +51,7 @@ function GroupsController (GroupService, $state) {
           group.lat = results[0].geometry.location.lat();
           group.lng = results[0].geometry.location.lng();
           findSearchedGroup(group);
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
+        } 
       });
     }
 
@@ -88,7 +86,7 @@ function GroupsController (GroupService, $state) {
   }
 
   init();
-  
+
 };
 
 GroupsController.$inject = ['GroupService', '$state'];
