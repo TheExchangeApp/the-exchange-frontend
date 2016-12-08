@@ -21,16 +21,13 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
       console.log(vm.meeting);
       let mtgBool = false;
 
-      console.log("vm.userID is: ", vm.userID, "vm.meeting.users is: ", vm.meeting.users[0].id);
-
+      // console.log("vm.userID is: ", vm.userID, "vm.meeting.users is: ", vm.meeting.users[0].id);
       vm.meeting.users.forEach(user => {
         if (Number(vm.userID) === user.id) { mtgBool = true; }
       });
 
       if (!mtgBool) { vm.isMember = false; }
     });
-    console.log(vm.isMember);
-    getNotes();
     getObj();
   };
 
@@ -48,15 +45,7 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
       vm.note = resp.data;
       vm.allNotes.push(vm.note);
       vm.note = '';
-      // console.log(vm.note);
     });
-  };
-
-  function getNotes () {
-    MeetingService.noteList(vm.id).then((resp) => {
-      vm.allNotes = resp.data;
-      // console.log(vm.allNotes);
-    })
   };
 
   function inputObj () {
@@ -66,13 +55,13 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
       // vm.obj = '';
       // console.log(vm.obj);
     });
-  }
+  };
 
   function getObj () {
     MeetingService.listObj(vm.id).then((resp) => {
       vm.allObj = resp.data;
       // console.log(vm.allObj);
-    })
+    });
   };
 
 };

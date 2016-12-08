@@ -21,7 +21,7 @@
   <div class="col-md-4 notes panel panel-default">
     <h3>My Notes and Comments</h3>
     <ul class="meeting-note">
-      <li ng-repeat="note in meetingDetail.allNotes" class="note">
+      <li ng-repeat="note in meetingDetail.meeting.notes" class="note">
         {{note.note}}
         {{note.created_at}}
       </li>
