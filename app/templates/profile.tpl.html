@@ -19,15 +19,14 @@
               {{group.groups.title}} - {{group.groups.description}}
            </a>
            <ul class="media-body">
-             <li class="media-heading" ng-repeat="meeting in GroupDetail.group.meetings">
+             <li class="media-heading" ng-repeat="meeting in profile.meetings">
                <a href="#/meeting/{{ meeting.meetings.id }}">
-                 {{meeting.curriculum}}
+                 {{meeting.meetings.curriculum}}
                </a>
              </li>
            </ul>
           </li>
         </ul>
       </div>
-    </div>
 
 </div>
