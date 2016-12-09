@@ -7,6 +7,9 @@ function MeetingService ($http, SERVER, UserService, GroupService, $stateParams)
   vm.noteList = noteList;
   vm.listObj = listObj;
   vm.addObj = addObj;
+  vm.obj= '';
+  vm.note = '';
+  vm.question = '';
 
   function meetingAddMember (meeting) {
     let req = {
@@ -30,7 +33,7 @@ function MeetingService ($http, SERVER, UserService, GroupService, $stateParams)
     let req = {
       url: `${SERVER}/meeting/${meeting}/note`,
       method: 'POST',
-      data: { note: note },
+      data: note,
       headers: UserService.getHeaders()
     };
     return $http(req);
@@ -45,14 +48,14 @@ function MeetingService ($http, SERVER, UserService, GroupService, $stateParams)
     return $http(req);
   }
 
-  function addObj (obj, meeting) {
+  function addObj (obj, note, question, meeting) {
     let req = {
       url: `${SERVER}/meeting/${meeting}/objective`,
       method: 'PUT',
-      data: { objective: obj },
+      data: {objective: obj, note: note, question: question},
       headers: UserService.getHeaders()
     };
-    console.log(req)
+    console.log("request is:", req)
     return $http(req);
   }
 

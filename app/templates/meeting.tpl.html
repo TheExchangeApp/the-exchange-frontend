@@ -1,24 +1,32 @@
-<div class="text-center">
+<div class="span10 pagination-centered text-center">
   <h3>{{meetingDetail.meeting.curriculum}}</h3>
     <button ng-hide="meetingDetail.isMember" ng-click="meetingDetail.addMtgMember()">JOIN</button>
 </div>
 
-<div class="col-md-12 meetings">
+<div class="span10">
 
-  <div class="col-md-4 text-left panel panel-default">
-    <h3>From the Group Leader</h3>
-    <p>Objective: {{meetingDetail.meeting.objective}}</p>
-    <form class="notes" ng-submit="meetingDetail.inputObj()">
-        <textarea ng-model="meetingDetail.obj"></textarea>
-        <button>Add Objective</button>
+  <div class="text-left panel panel-default">
+    <h4>Objective: {{meetingDetail.meeting.objective}}</h4>
+    <h4>Bible Verse: {{meetingDetail.meeting.note}}</h4>
+    <h4>Question: {{meetingDetail.meeting.question}}</h4>
+    <form ng-submit="meetingDetail.inputObj()"
+
+     ng-show="meetingDetail.orgShow"
+
+    >
+        <label for="inputCategory3" class="col-sm-4 control-label">Objective</label>
+          <textarea ng-model="meetingDetail.obj"></textarea>
+        <label for="inputCategory3" class="col-sm-4 control-label">Bible Verse</label>
+
+          <textarea ng-model="meetingDetail.note"></textarea>
+        <label for="inputCategory3" class="col-sm-4 control-label">Questions</label>
+
+          <textarea ng-model="meetingDetail.question"></textarea>
+        <button class="btn btn-default">Add Information</button>
     </form>
   </div>
 
-  <div class="col-md-4">
-    <img class="meetingpic" src="http://lh4.ggpht.com/_m9qne3nmA8s/R88YZ0BdI6I/AAAAAAAABYA/iY6Z6H0O1MY/3608.jpg?imgmax=640">
-  </div>
-
-  <div class="col-md-4 notes panel panel-default">
+  <div class="notes panel panel-default">
     <h3>My Notes and Comments</h3>
     <ul class="meeting-note">
       <li ng-repeat="note in meetingDetail.meeting.notes" class="note">
@@ -26,9 +34,17 @@
         {{note.created_at}}
       </li>
     </ul>
-    <form class="notes" ng-submit="meetingDetail.addNote()">
-        <textarea ng-model="meetingDetail.note"></textarea>
-        <button>Add Note</button>
+    <form ng-submit="meetingDetail.addNote()">
+        <textarea class="form-group" ng-model="meetingDetail.note.note"></textarea>
+
+        <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="meetingDetail.note.private">Private</label>
+           </div>
+        </div>
+
+        <button type="submit" class="btn btn-default">Add Note</button>
     </form>
   </div>
 
