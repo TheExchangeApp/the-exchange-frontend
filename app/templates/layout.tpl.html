@@ -12,8 +12,21 @@
           <a class="nav-item" href="#/home" ng-show="layout">ABOUT</a></li>
         <li role="presentation">
           <a class="nav-item" href="#/groupAdd" ng-show="layout.loggedIn">ADD GROUP</a></li>
+
         <li role="presentation">
+
+            <div id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">SEARCH GROUP
+              <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a class="nav-item" href="#/groupSearch">GROUP</a></li>
+              <li><a class="nav-item" href="#/nearMe">NEAR ME</a></li>
+            </ul>
+        </li>
+        <!-- <li role="presentation">
           <a class="nav-item" href="#/groupSearch" ng-show="layout.loggedIn">SEARCH GROUP</a></li>
+ -->
+
         <li role="presentation">
             <a class="nav-item" href="#/profile/{{layout.userID}}" ng-show="layout.loggedIn">PROFILE</a></li>
         <li role="presentation">

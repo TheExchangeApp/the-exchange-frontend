@@ -49,7 +49,13 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/meeting/:id',
       templateUrl: 'templates/meeting.tpl.html',
       controller: 'MeetingsController as meetingDetail'
+    })
+    .state('root.nearMe', {
+      url: '/nearMe',
+      templateUrl: 'templates/nearMe.tpl.html',
+      controller: 'GroupController as groupSearch'
     });
+
 
   $urlRouterProvider.otherwise('/home');
 };
