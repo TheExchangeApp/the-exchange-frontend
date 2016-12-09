@@ -1,19 +1,19 @@
-function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
+function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $state) {
 
   let vm = this;
   vm.id = $stateParams.id;
   vm.userID = $cookies.get('userID');
   vm.meeting = {};
   vm.member = {};
+  vm.note = {};
+  vm.obj= '';
   vm.note = '';
-  vm.allNotes = [];
-  vm.obj = [];
-  vm.allObj = [];
+  vm.question = '';
   vm.addMtgMember = addMtgMember;
   vm.addNote = addNote;
   vm.inputObj = inputObj;
-  vm.getObj = getObj;
   vm.isMember = true;
+  vm.orgShow = false;
 
   function init () {
     MeetingService.groupMeetingList(vm.id).then((resp) => {
@@ -25,10 +25,17 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
       vm.meeting.users.forEach(user => {
         if (Number(vm.userID) === user.id) { mtgBool = true; }
       });
+      if (!mtgBool) { vm.isMember = false; };
 
-      if (!mtgBool) { vm.isMember = false; }
+      vm.meeting.notes = vm.meeting.notes.filter(function (x) {
+        return !x.private || x.user_id === Number(vm.userID);
+      });
+
+      if (vm.meeting.group.organizer_id === (Number(vm.userID))) {
+        vm.orgShow = true;
+      }
+
     });
-    getObj();
   };
 
   init();
@@ -36,35 +43,35 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies) {
   function addMtgMember () {
     MeetingService.meetingAddMember(vm.id).then((resp) => {
       vm.member = resp.data;
-      // console.log(vm.member)
+      $state.go('root.profile')
     });
   };
 
   function addNote () {
+    vm.note.user_id = Number(vm.userID)
     MeetingService.addANote(vm.note, vm.id).then((resp) => {
-      vm.note = resp.data;
-      vm.allNotes.push(vm.note);
-      vm.note = '';
-    });
-  };
+
+      vm.meeting.notes.unshift(resp.data);
+      vm.note.note = '';
+    }
+  )};
 
   function inputObj () {
-    MeetingService.addObj(vm.obj, vm.id).then((resp) => {
-      vm.obj = resp.data;
-      // vm.allObj.push(vm.obj);
-      // vm.obj = '';
-      // console.log(vm.obj);
-    });
-  };
-
-  function getObj () {
-    MeetingService.listObj(vm.id).then((resp) => {
-      vm.allObj = resp.data;
-      // console.log(vm.allObj);
+    MeetingService.addObj(vm.obj, vm.note, vm.question, vm.id).then((resp) => {
+      vm.mtg = resp.data;
+      vm.organier = true;
+      console.log('Hi', vm.mtg.note)
+      // vm.obj = vm.mtg.obj;
+      // vm.mtg.note = vm.meeting.note;
+      // vm.question = vm.mtg.question;
+      vm.obj = '';
+      vm.note = '';
+      vm.question = '';
+      // $state.go('root.meeting')
     });
   };
 
 };
 
-MeetingsController.$inject = ['MeetingService', '$stateParams', '$scope', '$cookies'];
+MeetingsController.$inject = ['MeetingService', '$stateParams', '$scope', '$cookies', '$state'];
 export { MeetingsController };
