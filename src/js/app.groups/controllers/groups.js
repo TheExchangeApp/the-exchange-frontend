@@ -12,7 +12,7 @@ function GroupsController (GroupService, $state) {
   vm.showResults = false;
 
   function init () {
-
+    navigator.geolocation.getCurrentPosition(console.log);
   }
 
   function add (group) {
@@ -61,7 +61,6 @@ function GroupsController (GroupService, $state) {
     }
 
     function findSearchedGroup (group) {
-
       GroupService.groupSearch(group).then((resp) => {
         vm.groups = resp.data;
         console.log(group)
