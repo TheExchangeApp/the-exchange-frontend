@@ -12,10 +12,23 @@
     margin-bottom: 0px;
     font-weight: 100;
     letter-spacing: 2px;
-    padding-left: 35px;
+  }
+  .navbar-header {
+    padding-left: 40px;
+    .navbar-brand {
+      font-size: 25px;
+    }
+  }
+  .navbar-nav {
     padding-right: 35px;
   }
-
+  .dropdown-toggle {
+    padding-top: 15px;
+    color: grey;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
   .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
