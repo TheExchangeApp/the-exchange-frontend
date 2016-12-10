@@ -1,44 +1,36 @@
 <header>
-
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#/">
+        <a class="navbar-brand" href="#/home">
           THE eXCHANGE
         </a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li role="presentation">
-          <a class="nav-item" href="#/home" ng-show="layout">ABOUT</a></li>
-        <li role="presentation">
+        <li>
+          <a class="nav-item" href="#/" ng-show="layout">ABOUT</a></li>
+        <li>
           <a class="nav-item" href="#/groupAdd" ng-show="layout.loggedIn">ADD GROUP</a></li>
-
-        <li role="presentation">
-
-            <div id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">SEARCH GROUP
+        <li class="dropdown">
+            <div class="dropdown-toggle" data-toggle="dropdown" ng-show="layout.loggedIn">SEARCH
               <span class="caret"></span>
             </div>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a class="nav-item" href="#/groupSearch">GROUP</a></li>
+            <ul class="dropdown-menu">
+              <li><a href="#/groupSearch">GROUP</a></li>
               <li><a class="nav-item" href="#/nearMe">NEAR ME</a></li>
             </ul>
         </li>
-        <!-- <li role="presentation">
-          <a class="nav-item" href="#/groupSearch" ng-show="layout.loggedIn">SEARCH GROUP</a></li>
- -->
-
-        <li role="presentation">
+        <li>
             <a class="nav-item" href="#/profile/{{layout.userID}}" ng-show="layout.loggedIn">PROFILE</a></li>
-        <li role="presentation">
+        <li>
           <a class="nav-item" href="#/register" ng-show="!layout.loggedIn">SIGN UP</a></li>
         <li role="presentation">
           <a class="nav-item" href="#/login" ng-show="!layout.loggedIn">LOGIN</a></li>
-        <li role="presentation">
+        <li>
           <a class="nav-item" href="#/" ng-show="layout.loggedIn" ng-click="layout.logout()">LOGOUT</a></li>
       </ul>
     </div>
   </nav>
-
 </header>
 
 <div class="wrapper" ui-view></div>
