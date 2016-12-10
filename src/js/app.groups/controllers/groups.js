@@ -1,19 +1,69 @@
-function GroupsController (GroupService, $state) {
+function GroupsController (GroupService, $state, NgMap) {
 
   let vm = this;
 
   vm.groups = [];
   vm.address = {};
-  vm.lag = {};
-  vm.lng = {};
+  vm.location = {};
   vm.add = add;
   vm.search = search;
   vm.detail = detail;
   vm.showResults = false;
 
   function init () {
-    navigator.geolocation.getCurrentPosition(console.log);
+    navigator.geolocation.getCurrentPosition(pos => {
+      // console.log("position object is: ", pos);
+      // console.log("lattitude is: ", pos.coords.latitude);
+      let location = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+      // console.log('location: ', location)
+      GroupService.nearby(location).then((resp)=> {
+        vm.location = resp.data;
+        console.log('what is vm: ', vm.location)
+        })
+
+    })
+
+    initMap();
   }
+
+  function initMap () {
+      navigator.geolocation.getCurrentPosition(pos => {
+        console.log("position object is: ", pos);
+
+      var location = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+      var mapCanvas = document.getElementById('map');
+      var mapOptions = {
+          center: location,
+          zoom: 16,
+          panControl: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+
+        var contentString = '<div class="info-window">' +
+                '<h2>You are Here!</h2>' +
+                '<div class="info-content">' +
+                '</div>' +
+                '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 400
+        });
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+      })
+    google.maps.event.addDomListener(window, 'load', initMap);
+  };
+
 
   function add (group) {
     let address = `${group.street} ${group.zip}`;
@@ -39,7 +89,7 @@ function GroupsController (GroupService, $state) {
     });
   }
 
-    function searchLocator (group, address) {
+  function searchLocator (group, address) {
       var geocoder;
       var map;
       geocoder = new google.maps.Geocoder();
@@ -78,5 +128,5 @@ function GroupsController (GroupService, $state) {
 
 };
 
-GroupsController.$inject = ['GroupService', '$state'];
+GroupsController.$inject = ['GroupService', '$state', 'NgMap'];
 export { GroupsController };

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import moment from 'moment';
+import 'ngMap';
 
 import { SERVER } from './server';
 
@@ -8,5 +8,5 @@ import './app.groups';
 import './app.meetings';
 
 angular
-  .module('app', ['app.core', 'app.groups', 'app.meetings'])
+  .module('app', ['app.core', 'app.groups', 'app.meetings', 'ngMap'])
   .constant('SERVER', SERVER);
