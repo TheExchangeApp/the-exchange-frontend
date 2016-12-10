@@ -53,9 +53,8 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('root.nearMe', {
       url: '/nearMe',
       templateUrl: 'templates/nearMe.tpl.html',
-      controller: 'GroupController as groupSearch'
+      controller: 'GroupsController as groupSearch'
     });
-
 
   $urlRouterProvider.otherwise('/home');
 };

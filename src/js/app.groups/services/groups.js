@@ -8,6 +8,7 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
   vm.groupMemberList = groupMemberList;
   vm.groupAddMember = groupAddMember;
   vm.groupAddMeeting = groupAddMeeting;
+  vm.nearby = nearby;
 
   function groupSearch (group) {
     let req = {
@@ -18,6 +19,17 @@ function GroupService ($http, SERVER, UserService, $stateParams) {
     }
     return $http(req);
   }
+
+  function nearby (location) {
+      let req = {
+      url: `${SERVER}/group/nearby`,
+      method: 'GET',
+      params: location,
+      headers: UserService.getHeaders()
+    };
+    return $http(req);
+    console.log(req)
+  };
 
   function groupDetail (group) {
     let req = {
