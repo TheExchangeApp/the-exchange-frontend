@@ -1,116 +1,120 @@
 <div class="searchpage">
-<h3 class="text-center">SEARCH FOR GROUPS</h3>
-<form class="form-horizontal" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
+  <div class="jumbotron">
 
-  <div class="form-group">
-    <label for="inputTitle3" class="col-sm-4 control-label">Title</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.title" placeholder="Title">
+    <h3 class="text-center">SEARCH A GROUP</h3>
+    <p>Search by title, category, description, day of week and childcare.</p>
+    <form class="form-horizontal" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
+
+      <div class="form-group">
+        <label for="inputTitle3" class="col-sm-4 control-label">Title</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="group.title" placeholder="Title">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputCategory3" class="col-sm-4 control-label">Category</label>
+        <div class="col-sm-4">
+          <select type="text" class="form-control" placeholder="Men, Women, Single ..." ng-model="group.category">
+            <option>Men</option>
+            <option>Women</option>
+            <option>Mixed</option>
+            <option>Married</option>
+            <option>Single</option>
+            <option>Youth</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputDescription3" class="col-sm-4 control-label">Description</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="group.description" placeholder="Book of the Bible  (i.e. Daniel)">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputDay3" class="col-sm-4 control-label">Day of the Week</label>
+        <div class="col-sm-4">
+          <select type="text" class="form-control" placeholder="Monday" class="selectpicker" ng-model="group.day">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputChildcare3" class="col-sm-4 control-label">Childcare</label>
+        <div class="col-sm-4">
+          <select type="text" class="form-control" ng-model="group.childcare" placeholder="Yes / No">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="inputStreet3" class="col-sm-4 control-label">Street</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="group.street" placeholder="Peachtree Street" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputCity3" class="col-sm-4 control-label">City</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="group.city" placeholder="Atlanta">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputState3" class="col-sm-4 control-label">State</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="group.state" placeholder="GA">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputState3" class="col-sm-4 control-label">Zip Code</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="group.zip" placeholder="30320" required>
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-10">
+          <button type="submit" class="btn btn-default">SUBMIT</button>
+        </div>
+      </div>
+    </form>
+
+    <div ng-show="groupSearch.showResults" class="text-center">
+      <ul>
+        <li ng-repeat="group in groupSearch.groups.results">
+          <p>
+            <a class="group-detail" href="#/groupDetail/{{ group.id }}">
+            {{group.title}} - {{group.category}}
+            {{group.description}}
+            {{group.day}}
+            {{group.childcare? 'Yes':'No'}}
+            {{group.address.street}}
+            {{group.address.city}}
+            {{group.address.state}}
+            {{group.address.zip}}
+            </a>
+          </p>
+        </li>
+      </ul>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-default" ng-click="groupSearch.showResults = !groupSearch.showResults">NEW SEARCH</button>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="form-group">
-    <label for="inputCategory3" class="col-sm-4 control-label">Category</label>
-    <div class="col-sm-4">
-      <select type="text" class="form-control" placeholder="Men, Women, Single ..." ng-model="group.category">
-        <option>Men</option>
-        <option>Women</option>
-        <option>Mixed</option>
-        <option>Married</option>
-        <option>Single</option>
-        <option>Youth</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputDescription3" class="col-sm-4 control-label">Description</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.description" placeholder="Book of the Bible  (i.e. Daniel)">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputDay3" class="col-sm-4 control-label">Day of the Week</label>
-    <div class="col-sm-4">
-      <select type="text" class="form-control" placeholder="Monday" class="selectpicker" ng-model="group.day">
-        <option>Monday</option>
-        <option>Tuesday</option>
-        <option>Wednesday</option>
-        <option>Thursday</option>
-        <option>Friday</option>
-        <option>Saturday</option>
-        <option>Sunday</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputChildcare3" class="col-sm-4 control-label">Childcare</label>
-    <div class="col-sm-4">
-      <select type="text" class="form-control" ng-model="group.childcare" placeholder="Yes / No">
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- <div class="form-group">
-    <label for="inputStreet3" class="col-sm-4 control-label">Street</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.street" placeholder="Peachtree Street" required>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputCity3" class="col-sm-4 control-label">City</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.city" placeholder="Atlanta">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputState3" class="col-sm-4 control-label">State</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.state" placeholder="GA">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputState3" class="col-sm-4 control-label">Zip Code</label>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="group.zip" placeholder="30320" required>
-    </div>
-  </div> -->
-
-  <div class="form-group">
-    <div class="col-sm-offset-4 col-sm-10">
-      <button type="submit" class="btn btn-default">SUBMIT</button>
-    </div>
-  </div>
-</form>
-
-<div ng-show="groupSearch.showResults" class="text-center">
-  <ul>
-    <li ng-repeat="group in groupSearch.groups.results">
-      <p>
-        <a class="group-detail" href="#/groupDetail/{{ group.id }}">
-        {{group.title}} - {{group.category}}
-        {{group.description}}
-        {{group.day}}
-        {{group.childcare? 'Yes':'No'}}
-        {{group.address.street}}
-        {{group.address.city}}
-        {{group.address.state}}
-        {{group.address.zip}}
-        </a>
-      </p>
-    </li>
-  </ul>
-  <div class="form-group">
-    <div class="col-sm-6">
-      <button type="submit" class="btn btn-default" ng-click="groupSearch.showResults = !groupSearch.showResults">NEW SEARCH</button>
-    </div>
-  </div>
-</div>
 </div>

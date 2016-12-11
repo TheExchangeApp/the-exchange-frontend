@@ -1,51 +1,49 @@
-<div class="span10 pagination-centered text-center">
-  <h3>{{meetingDetail.meeting.curriculum}}</h3>
-    <button ng-hide="meetingDetail.isMember" ng-click="meetingDetail.addMtgMember()">JOIN</button>
-</div>
+<div class="meeting">
+  <div class="row">
+    <div class="jumbotron text-center">
+      <h3>{{meetingDetail.meeting.curriculum}}</h3>
+        <button class="btn btn-default" ng-hide="meetingDetail.isMember" ng-click="meetingDetail.addMtgMember()">JOIN</button>
 
-<div class="span10">
+      <div class="organizer text-left">
+        <h4>Objective: {{meetingDetail.meeting.objective}}</h4>
+        <h4>Bible Verse: {{meetingDetail.meeting.note}}</h4>
+        <h4>Question: {{meetingDetail.meeting.question}}</h4>
+        <form ng-submit="meetingDetail.inputObj()" ng-show="meetingDetail.orgShow">
+            <label for="inputObjective3" class="control-label">Objective</label>
+              <textarea class="form-control" ng-model="meetingDetail.obj"></textarea>
+            <label for="inputVerse3" class=" control-label">Bible Verse</label>
 
-  <div class="text-left panel panel-default">
-    <h4>Objective: {{meetingDetail.meeting.objective}}</h4>
-    <h4>Bible Verse: {{meetingDetail.meeting.note}}</h4>
-    <h4>Question: {{meetingDetail.meeting.question}}</h4>
-    <form ng-submit="meetingDetail.inputObj()"
+              <textarea class="form-control" ng-model="meetingDetail.note"></textarea>
+            <label for="inputQuestion3" class="control-label">Questions</label>
 
-     ng-show="meetingDetail.orgShow"
+              <textarea class="form-control" ng-model="meetingDetail.question"></textarea>
+            <button class="btn btn-default">Add Information</button>
+        </form>
+      </div>
+    </div>
 
-    >
-        <label for="inputCategory3" class="col-sm-4 control-label">Objective</label>
-          <textarea ng-model="meetingDetail.obj"></textarea>
-        <label for="inputCategory3" class="col-sm-4 control-label">Bible Verse</label>
+    <div class="notes">
+      <h3>Notes and Comments</h3>
+      <ul class="meeting-note">
+        <li ng-repeat="note in meetingDetail.meeting.notes" class="note">
+          {{note.note}}
+          {{note.created_at}}
+        </li>
+      </ul>
+      <form ng-submit="meetingDetail.addNote()">
+          <textarea class="form-group" ng-model="meetingDetail.note.note"></textarea>
 
-          <textarea ng-model="meetingDetail.note"></textarea>
-        <label for="inputCategory3" class="col-sm-4 control-label">Questions</label>
+          <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="meetingDetail.note.private">Private</label>
+             </div>
+          </div>
 
-          <textarea ng-model="meetingDetail.question"></textarea>
-        <button class="btn btn-default">Add Information</button>
-    </form>
+          <button type="submit" class="btn btn-default">Add Note</button>
+      </form>
+    </div>
+
+
   </div>
-
-  <div class="notes panel panel-default">
-    <h3>My Notes and Comments</h3>
-    <ul class="meeting-note">
-      <li ng-repeat="note in meetingDetail.meeting.notes" class="note">
-        {{note.note}}
-        {{note.created_at}}
-      </li>
-    </ul>
-    <form ng-submit="meetingDetail.addNote()">
-        <textarea class="form-group" ng-model="meetingDetail.note.note"></textarea>
-
-        <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" ng-model="meetingDetail.note.private">Private</label>
-           </div>
-        </div>
-
-        <button type="submit" class="btn btn-default">Add Note</button>
-    </form>
-  </div>
-
 </div>
