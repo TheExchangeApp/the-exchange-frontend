@@ -10,6 +10,7 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
   vm.addMember = addMember;
   vm.addMeeting = addMeeting;
   vm.isAMember = true;
+  vm.isOrganizer = true;
   // vm.convertTime = convertTime;
   vm.meeting = {};
 
@@ -23,8 +24,11 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
 
   function init () {
     GroupService.groupDetail(vm.id).then((resp) => {
+      let memBool = false;
       vm.group = resp.data.group[0];
       console.log(vm.group);
+      if (Number(vm.userID) === vm.group.organizer_id) memBool = true;
+      if (!memBool) vm.isOrganizer = false;
       vm.group.meetings.forEach((meeting) => {
         meeting.time = moment(meeting.time).format("h:mm a");
       });
