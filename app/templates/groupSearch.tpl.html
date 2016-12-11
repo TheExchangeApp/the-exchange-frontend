@@ -1,6 +1,6 @@
 <div class="searchpage">
   <div class="jumbotron">
-
+    <div>
     <h3 class="text-center">SEARCH A GROUP</h3>
     <p>Search by title, category, description, day of week and childcare.</p>
     <form class="form-horizontal" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
@@ -92,6 +92,7 @@
         </div>
       </div>
     </form>
+    </div>
 
     <div ng-show="groupSearch.showResults" class="text-center">
       <ul>
@@ -116,5 +117,6 @@
         </div>
       </div>
     </div>
+    
   </div>
 </div>

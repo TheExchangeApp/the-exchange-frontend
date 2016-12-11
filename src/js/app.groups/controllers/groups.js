@@ -70,11 +70,6 @@ function GroupsController (GroupService, $state, NgMap) {
     googleLocator(group, address);
   }
 
-  function search (group) {
-    let address = `${group.street} ${group.zip}`;
-    searchLocator(group, address);
-  }
-
   function googleLocator (group, address) {
     var geocoder;
     var map;
@@ -89,18 +84,18 @@ function GroupsController (GroupService, $state, NgMap) {
     });
   }
 
-  function searchLocator (group, address) {
-      var geocoder;
-      var map;
-      geocoder = new google.maps.Geocoder();
-      geocoder.geocode( { 'address': address},  function(results, status) {
-        if (status == 'OK') {
-          group.lat = results[0].geometry.location.lat();
-          group.lng = results[0].geometry.location.lng();
-          findSearchedGroup(group);
-        }
-      });
-    }
+  // function searchLocator (group, address) {
+  //     var geocoder;
+  //     var map;
+  //     geocoder = new google.maps.Geocoder();
+  //     geocoder.geocode( { 'address': address},  function(results, status) {
+  //       if (status == 'OK') {
+  //         group.lat = results[0].geometry.location.lat();
+  //         group.lng = results[0].geometry.location.lng();
+  //         findSearchedGroup(group);
+  //       }
+  //     });
+  //   }
 
     function addFinishedGroup (group) {
       GroupService.groupAdd(group).then((resp) => {
@@ -110,12 +105,12 @@ function GroupsController (GroupService, $state, NgMap) {
       });
     }
 
-    function findSearchedGroup (group) {
+    function search (group) {
       GroupService.groupSearch(group).then((resp) => {
         vm.groups = resp.data;
         console.log(group)
         vm.showResults = true;
-      });
+      })
     }
 
   function detail (group) {
