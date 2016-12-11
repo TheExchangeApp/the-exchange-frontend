@@ -1,6 +1,6 @@
 <div class="group">
   <div class="row">
-    <div class="jumbotron groupinfo">
+    <div class="jumbotron groupinfo text-center">
       <div class="groupinfodetail text-center">
         <h3 class="text-center">{{groupDetail.group.title}} </h3>
           <p>{{groupDetail.group.description}}</p>
@@ -11,12 +11,13 @@
     </div>
 
     <div class="groupdetail">
-      <div class="grouplist col-lg-6 col-md-6">
-        <h3 class="text-center">Meeting List
-          <button class="btn btn-default" >
-            <a ui-sref="root.groupAddMtgs({ id: groupDetail.id })">Add Meeting</a>
-          </button>
-        </h3>
+      <div class="col-lg-6 col-md-6">
+        <div class="grouplist">
+          <h3 class="text-center">Meeting List
+            <button ng-show="groupDetail.isOrganizer" class="btn btn-default" >
+              <a ui-sref="root.groupAddMtgs({ id: groupDetail.id })">Add Meeting</a>
+            </button>
+          </h3>
           <div class="media">
             <ul class="media-body">
               <li class="media-heading" ng-repeat="meeting in groupDetail.group.meetings">
@@ -27,8 +28,10 @@
               </li>
             </ul>
           </div>
+        </div>
       </div>
-      <div class="memberlist col-lg-6 col-md-6">
+      <div class="col-lg-6 col-md-6">
+        <div class="memberlist">
         <h3 class="text-center">Member List</h3>
           <div class="media">
             <ul class="media-body" ng-show='groupDetail.memberList'>
@@ -37,6 +40,7 @@
               </li>
             </ul>
           </div>
+      </div>
       </div>
     </div>
 
