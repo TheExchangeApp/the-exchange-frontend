@@ -3,7 +3,16 @@
     <div class="col-lg-6 col-md-6">
       <div class="search-results">
 
-//search results should be placed here
+        //search results should be placed here
+        <ol>
+          <li ng-repeat="group in groupSearch.location">
+            {{group.title}}
+            {{group.address.street}}
+            {{group.address.city}}
+            {{group.address.state}}
+            {{group.address.zip}}
+          </li>
+        </ol>
 
       </div>
     </div>
