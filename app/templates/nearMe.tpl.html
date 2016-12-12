@@ -6,16 +6,16 @@
         <h3 class="text-center">Groups Nearby</h3>
 
           <div class="text-center">
-            <form class="form-inline" ng-submit="groupSearch.nearby(group)">
+            <form class="form-inline" ng-submit="groupSearch.nearme(miles)">
               <div class="form-group text-center">
                 <label for="inputMile3" class="control-label">Select Mile Range
                 </label>
-                  <select class="form-control selectmile" ng-model="group.address.miles" >
-                      <option>2</option>
-                      <option>5</option>
-                      <option>10</option>
-                      <option>15</option>
-                      <option>30</option>
+                  <select class="form-control selectmile" ng-model="miles" >
+                      <option value="2">2 Miles</option>
+                      <option value="5">5 Miles</option>
+                      <option value="10">10 Miles</option>
+                      <option value="15">15 Miles</option>
+                      <option value="30">30 Miles</option>
                   </select>
               <button type="submit" class="btn btn-default">Search</button>
             </div>
