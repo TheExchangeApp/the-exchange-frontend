@@ -8,7 +8,7 @@
         <h4>Objective: {{meetingDetail.meeting.objective}}</h4>
         <h4>Bible Verse: {{meetingDetail.meeting.note}}</h4>
         <h4>Question: {{meetingDetail.meeting.question}}</h4>
-        <form ng-submit="meetingDetail.inputObj()" ng-show="meetingDetail.orgShow">
+        <form ng-submit="meetingDetail.inputObj()" ng-show="meetingDetail.orgShow" class="objectiveform">
             <label for="inputObjective3" class="control-label">Objective</label>
               <textarea class="form-control" ng-model="meetingDetail.obj"></textarea>
             <label for="inputVerse3" class=" control-label">Bible Verse</label>
@@ -23,16 +23,16 @@
     </div>
 
     <div class="notes">
-      <h3>Notes and Comments</h3>
-      <ul class="meeting-note">
-        <li ng-repeat="note in meetingDetail.meeting.notes" class="note">
-          {{note.note}}
-          {{note.created_at}}
-        </li>
-      </ul>
+      <div class="notetitle text-center">Notes and Comments</div>
+        <ul class="list-group">
+          <li ng-repeat="note in meetingDetail.meeting.notes" class="note list-group-item">
+            <h5>{{note.created_at}} by username</h5>
+            <p class="notebody">{{note.note}}</p>
+          </li>
+        </ul>
       <form ng-submit="meetingDetail.addNote()">
-          <textarea class="form-group" ng-model="meetingDetail.note.note"></textarea>
-
+          <textarea class="form-control" ng-model="meetingDetail.note.note">
+          </textarea>
           <div class="form-group">
               <div class="checkbox">
                 <label>
@@ -40,7 +40,7 @@
              </div>
           </div>
 
-          <button type="submit" class="btn btn-default">Add Note</button>
+          <button type="submit" class="btn btn-default addnote">Add Note</button>
       </form>
     </div>
 

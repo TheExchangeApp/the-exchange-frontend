@@ -1,6 +1,6 @@
 <div class="searchpage">
   <div class="jumbotron">
-    <div>
+    <div class="text-center">
     <h3 class="text-center">SEARCH A GROUP</h3>
     <p>Search by title, category, description, day of week and childcare.</p>
     <form class="form-horizontal" ng-submit="groupSearch.search(group)" ng-hide="groupSearch.showResults">
@@ -87,36 +87,29 @@
       </div> -->
 
       <div class="form-group">
-        <div class="col-sm-offset-4 col-sm-10">
+        <div class="col-sm-10">
           <button type="submit" class="btn btn-default">SUBMIT</button>
         </div>
       </div>
     </form>
-    </div>
 
-    <div ng-show="groupSearch.showResults" class="text-center">
-      <ul>
-        <li ng-repeat="group in groupSearch.groups.results">
-          <p>
-            <a class="group-detail" href="#/groupDetail/{{ group.id }}">
-            {{group.title}} - {{group.category}}
-            {{group.description}}
-            {{group.day}}
-            {{group.childcare? 'Yes':'No'}}
-            {{group.address.street}}
-            {{group.address.city}}
-            {{group.address.state}}
-            {{group.address.zip}}
-            </a>
-          </p>
-        </li>
-      </ul>
-      <div class="form-group">
-        <div class="col-sm-6">
-          <button type="submit" class="btn btn-default" ng-click="groupSearch.showResults = !groupSearch.showResults">NEW SEARCH</button>
-        </div>
+    <div ng-show="groupSearch.showResults">
+        <ul>
+          <li ng-repeat="group in groupSearch.groups.results">
+            <p>
+              <a class="group-detail" href="#/groupDetail/{{ group.id }}">
+              <h4>Title {{group.title}} - {{group.description}}<h4></a>
+              <p class="result">Address: {{group.address.street}}, {{group.address.city}},  {{group.address.state}} {{group.address.zip}}</p>
+              <p class="result">{{group.category}} Group Meeting on {{group.day}}'s</p>
+              <p class="result">Childcare: {{group.childcare? 'Yes':'No'}}</p>
+
+            </p>
+          </li>
+        </ul>
+
+        <button type="submit" class="btn btn-default text-center"  ng-click="groupSearch.showResults = !groupSearch.showResults">NEW SEARCH
+        </button>
       </div>
     </div>
-    
   </div>
 </div>
