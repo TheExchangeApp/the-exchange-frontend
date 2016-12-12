@@ -19,8 +19,8 @@
             </button>
           </h3>
           <div class="media">
-            <ul class="media-body">
-              <li class="media-heading" ng-repeat="meeting in groupDetail.group.meetings">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="meeting in groupDetail.group.meetings" >
                 <a href="#/meeting/{{ meeting.id }}">
                   {{meeting.curriculum}}
                   {{meeting.time}}
@@ -34,8 +34,8 @@
         <div class="memberlist">
         <h3 class="text-center">Member List</h3>
           <div class="media">
-            <ul class="media-body" ng-show='groupDetail.memberList'>
-              <li class="media-heading" ng-repeat="member in groupDetail.memberList">
+            <ul class="list-group" ng-show="groupDetail.memberList">
+              <li class="list-group-item" ng-repeat="member in groupDetail.memberList">
                 {{member.users.username}}
               </li>
             </ul>

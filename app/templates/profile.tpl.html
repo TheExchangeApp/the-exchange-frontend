@@ -1,35 +1,29 @@
-<div class="col-md-12">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-        <img src="https://s-media-cache-ak0.pinimg.com/236x/37/4f/e8/374fe86bcafddb975f16fbc4902331af.jpg">
-        <div class="caption">
-          <p>Disciple: {{ profile.groups.username }}</p>
-          <p>Write Letters To: {{ profile.groups.email }}</p>
-        </div>
+
+<div class="profiledetail">
+      <div class="jumbotron">
+        <h3 class="text-center">HELLO {{ profile.groups.name }}</h3>
+          <p class="text-center">Member since{{profile.groups.created_at}}</p>
+
+            <div class="profileinfo">
+              <h4 class="text-center">Group(s)</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="group in profile.groups.groups">
+                      <a href="#/groupDetail/{{ group.id }}">
+                        {{group.title}} - {{group.description}}
+                     </a>
+                    </li>
+                  </ul>
+              <h4 class="text-center">Meeting(s)</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="meeting in profile.groups.meetings">
+                      <a href="#/meeting/{{ meeting.id }}">
+                        {{meeting.curriculum}}   {{meeting.time}}
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+
+      </div>
     </div>
-  </div>
-
-  <div class="text-left col-md-6 profile-body">
-    <h3>{{ profile.groups.name }} belongs to the following:</h3>
-    <h4>Group(s)</h4>
-      <div class="media">
-        <ul class="media-body">
-          <li class="media-heading" ng-repeat="group in profile.groups.groups">
-            <a href="#/groupDetail/{{ group.id }}">
-              {{group.title}} - {{group.description}}
-           </a>
-          </li>
-        </ul>
-      </div>
-    <h4>Meeting(s)</h4>
-      <div class="media">
-        <ul class="media-body">
-          <li class="media-heading" ng-repeat="meeting in profile.groups.meetings">
-            <a href="#/meeting/{{ meeting.id }}">
-              {{meeting.curriculum}}
-            </a>
-          </li>
-        </ul>
-      </div>
-
 </div>

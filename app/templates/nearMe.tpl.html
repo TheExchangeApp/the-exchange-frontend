@@ -6,12 +6,11 @@
         <ol>
           <li ng-repeat="group in groupSearch.location">
             <a href="#/groupDetail/{{ group.id }}">
-              <h4>Group: {{group.title}}</h4>
+              <h4>Group: {{group.title}}</h4></a>
               <p>{{group.address.street}},
               {{group.address.city}}
               {{group.address.state}}
-              {{group.address.zip}}</p>
-            </a>
+              {{group.address.zip}}</p>      
           </li>
         </ol>
 
