@@ -11,14 +11,13 @@
                       <a href="#/groupDetail/{{ group.id }}">
                         {{group.title}} - {{group.description}}
                      </a>
-                    </li>
-                  </ul>
-              <h4 class="text-center">Meeting(s)</h4>
-                  <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="meeting in profile.groups.meetings">
-                      <a href="#/meeting/{{ meeting.id }}">
-                        {{meeting.curriculum}}   {{meeting.time}}
-                      </a>
+                       <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="meeting in profile.groups.meetings">
+                          <a href="#/meeting/{{ meeting.id }}">
+                            {{meeting.time}} {{meeting.curriculum}} 
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
               </div>
