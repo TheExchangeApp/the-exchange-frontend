@@ -1,9 +1,10 @@
 import moment from 'moment';
+import lodash from 'lodash';
 
 function ProfileController (UserService, GroupService, $state, $rootScope, $stateParams) {
 
   let vm = this;
-
+  vm.user = {};
   vm.groups = [];
   vm.meetings = [];
   vm.profileGroup = profileGroup;
@@ -22,9 +23,12 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
       vm.groups.created_at = moment(vm.groups.created_at).format("MMM D, YYYY");
       vm.groups.meetings.forEach((meeting) => {
         meeting.time = moment(meeting.time).format("hh:mm A");
+
       });
     });
   }
+
+  _.find(vm.meetings, {meetings.group_id === groups.id})
 
 };
 
