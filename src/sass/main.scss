@@ -141,7 +141,7 @@ h4, .media {
   padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1461237439866-5a557710c921?dpr=2&auto=format&fit=crop&w=1500&h=997&q=80");
-  height: 1000px;
+  height: 800px;
   width: 100%;
 
   .jumbotron {
@@ -172,7 +172,7 @@ h4, .media {
   padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1422479516648-9b1f0b6e8da8?dpr=2&auto=format&fit=crop&w=1500&h=1001&q=80");
-  height: 600px;
+  height: 800px;
   width: 100%;
 
   .jumbotron {
@@ -200,7 +200,7 @@ h4, .media {
   padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1433650552684-d4004a945d6c?dpr=2");
-  height: 1100px;
+  height: 800px;
   width: 100%;
   .jumbotron {
     position: relative;
@@ -233,7 +233,7 @@ h4, .media {
   padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1444212568492-d2799d30943b?dpr=2&auto=format&fit=crop&w=1500&h=998&q=80");
-  height: 1000px;
+  height: 800px;
   width: 100%;
 
   .jumbotron {
@@ -253,11 +253,10 @@ h4, .media {
   .nearbyresults {
     background-color: #EEEEEE;
     border-radius: 5px;
-    margin-top: 40px;
     overflow:scroll;
     margin-left: 20px;
     margin-right: 2.5px;
-    height: 425px;
+    height: 430px;
     opacity: .96;
     p {
       padding-bottom: 15px;
