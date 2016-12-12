@@ -91,7 +91,8 @@ h4, .media {
 
 //login
 .login {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1477453559950-e541fa922120?dpr=2&auto=format&fit=crop&w=1500&h=1134&q=80");
   height: 800px;
@@ -103,7 +104,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 60px;
     margin-left: 300px;
     margin-right: 300px;
     padding-top: 20px;
@@ -114,7 +114,8 @@ h4, .media {
 
 //signin
 .register {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1459515581694-46b4d817903b?dpr=2&auto=format&fit=crop&w=1500&h=1124&q=80");
   height: 800px;
@@ -126,7 +127,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 60px;
     margin-left: 300px;
     margin-right: 300px;
     padding-top: 20px;
@@ -137,7 +137,8 @@ h4, .media {
 
 //add a group
 .addgroup {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1461237439866-5a557710c921?dpr=2&auto=format&fit=crop&w=1500&h=997&q=80");
   height: 1000px;
@@ -145,7 +146,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 40px;
     margin-left: 300px;
     margin-right: 300px;
     padding-top: 15px;
@@ -168,7 +168,8 @@ h4, .media {
 
 //add a meeting
 .addmeeting {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1422479516648-9b1f0b6e8da8?dpr=2&auto=format&fit=crop&w=1500&h=1001&q=80");
   height: 600px;
@@ -176,7 +177,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 60px;
     margin-left: 300px;
     margin-right: 300px;
     padding-top: 15px;
@@ -196,14 +196,14 @@ h4, .media {
 
 //search page and results
 .searchpage {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1433650552684-d4004a945d6c?dpr=2");
   height: 1100px;
   width: 100%;
   .jumbotron {
     position: relative;
-    margin-top: 60px;
     margin-left: 300px;
     margin-right: 300px;
     padding-top: 15px;
@@ -229,7 +229,8 @@ h4, .media {
 
 //nearby page
 .nearby {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1444212568492-d2799d30943b?dpr=2&auto=format&fit=crop&w=1500&h=998&q=80");
   height: 1000px;
@@ -237,7 +238,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 70px;
     margin-left: 2.5px;
     margin-right: 20px;
     padding: 15px;
@@ -253,7 +253,7 @@ h4, .media {
   .nearbyresults {
     background-color: #EEEEEE;
     border-radius: 5px;
-    margin-top: 70px;
+    margin-top: 40px;
     overflow:scroll;
     margin-left: 20px;
     margin-right: 2.5px;
@@ -269,7 +269,8 @@ h4, .media {
 }
 //group detail page
 .group {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1461595520627-42e3c83019bc?dpr=2&auto=format&fit=crop&w=1500&h=844&q=80");
   height: 800px;
@@ -277,7 +278,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 40px;
     margin-left: 200px;
     margin-right: 200px;
     padding-top: 15px;
@@ -319,7 +319,8 @@ h4, .media {
 
 //meeting detail
 .meeting {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?dpr=2&auto=compress,format&fit=crop&w=376&h=282&q=80");
   height: 1200px;
@@ -327,7 +328,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 40px;
     margin-left: 200px;
     margin-right: 200px;
     padding-top: 15px;
@@ -386,7 +386,8 @@ h4, .media {
 
 //profile
 .profiledetail {
-  position: absolute;
+  position: relative;
+  padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80");
   height: 1100px;
@@ -394,7 +395,6 @@ h4, .media {
 
   .jumbotron {
     position: relative;
-    margin-top: 40px;
     margin-left: 250px;
     margin-right: 250px;
     padding-top: 15px;

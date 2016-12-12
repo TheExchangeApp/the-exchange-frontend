@@ -5,6 +5,7 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
   let vm = this;
 
   vm.groups = [];
+  vm.meetings = [];
   vm.profileGroup = profileGroup;
 
   function init () {
@@ -16,11 +17,13 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
   function profileGroup () {
     UserService.getGroups($stateParams.id).then((resp) => {
       vm.groups = resp.data[0];
-      console.log('vm.groups is: ', vm.groups);
+      vm.meetings = resp.data[0].groups;
+      console.log('vm.groups: ', vm.groups);
+      console.log('vm.groups.groups: ', vm.groups.groups);
+      console.log('vm.meetings: ', vm.meetings);
       vm.groups.created_at = moment(vm.groups.created_at).format("MMM D, YYYY");
       vm.groups.meetings.forEach((meeting) => {
         meeting.time = moment(meeting.time).format("h:mm a");
-        console.log(meeting.time)
       });
     });
   }
