@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $state) {
 
   let vm = this;
@@ -20,6 +22,10 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
       vm.meeting = resp.data[0];
       console.log(vm.meeting);
       let mtgBool = false;
+
+      vm.meeting.notes.forEach((note) => {
+        note.created_at = moment(note.created_at).format("MMM Do YYYY, h:mm a");
+      });
 
       // console.log("vm.userID is: ", vm.userID, "vm.meeting.users is: ", vm.meeting.users[0].id);
       vm.meeting.users.forEach(user => {
