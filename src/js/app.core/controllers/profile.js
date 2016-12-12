@@ -1,9 +1,10 @@
 import moment from 'moment';
+import lodash from 'lodash';
 
 function ProfileController (UserService, GroupService, $state, $rootScope, $stateParams) {
 
   let vm = this;
-
+  vm.user = {};
   vm.groups = [];
   vm.meetings = [];
   vm.profileGroup = profileGroup;
@@ -27,7 +28,7 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
       });
     });
   };
-
+  
 };
 
 ProfileController.$inject = ['UserService', 'GroupService', '$state', '$rootScope', '$stateParams'];
