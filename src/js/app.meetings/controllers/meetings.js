@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $state) {
 
   let vm = this;
@@ -34,6 +36,10 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
       if (vm.meeting.group.organizer_id === (Number(vm.userID))) {
         vm.orgShow = true;
       }
+
+      vm.meeting.notes.forEach((note) => {
+        note.created_at = moment(note.created_at).format("h:mm a");
+      });
 
     });
   };
