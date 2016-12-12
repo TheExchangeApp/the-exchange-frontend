@@ -30,7 +30,7 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
       if (Number(vm.userID) === vm.group.organizer_id) memBool = true;
       if (!memBool) vm.isOrganizer = false;
       vm.group.meetings.forEach((meeting) => {
-        meeting.time = moment(meeting.time).format("h:mm a");
+        meeting.time = moment(meeting.time).format("hh:mm A");
       });
 
       memberList();

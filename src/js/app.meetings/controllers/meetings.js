@@ -24,7 +24,7 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
       let mtgBool = false;
 
       vm.meeting.notes.forEach((note) => {
-        note.created_at = moment(note.created_at).format("MMM Do YYYY, h:mm a");
+        note.created_at = moment(note.created_at).format("MMM Do YYYY, hh:mm A");
       });
 
       // console.log("vm.userID is: ", vm.userID, "vm.meeting.users is: ", vm.meeting.users[0].id);
