@@ -12,7 +12,9 @@
                         {{group.title}} - {{group.description}}
                      </a>
                        <ul class="list-group">
-                        <li class="list-group-item" ng-repeat="meeting in group.meetings">
+                        <li class="list-group-item" ng-repeat="meeting in group.meetings" ng-class="{bold: meeting.attending}">
+                          {{ 'group id is: ' + group.id }}
+                          {{ 'meeting group id is: ' + group.id }}
                           <a href="#/meeting/{{ meeting.id }}">
                             {{meeting.time}} {{meeting.curriculum}}
                           </a>
