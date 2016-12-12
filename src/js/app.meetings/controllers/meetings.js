@@ -23,6 +23,10 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
       console.log(vm.meeting);
       let mtgBool = false;
 
+      vm.meeting.notes.forEach((note) => {
+        note.created_at = moment(note.created_at).format("MMM Do YYYY, h:mm a");
+      });
+
       // console.log("vm.userID is: ", vm.userID, "vm.meeting.users is: ", vm.meeting.users[0].id);
       vm.meeting.users.forEach(user => {
         if (Number(vm.userID) === user.id) { mtgBool = true; }
@@ -36,10 +40,6 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
       if (vm.meeting.group.organizer_id === (Number(vm.userID))) {
         vm.orgShow = true;
       }
-
-      vm.meeting.notes.forEach((note) => {
-        note.created_at = moment(note.created_at).format("h:mm a");
-      });
 
     });
   };
