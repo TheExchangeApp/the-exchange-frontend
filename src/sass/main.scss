@@ -11,7 +11,9 @@
   background-position: center;
   background-size: cover;
 }
-
+// html,body{
+//     height: 100%
+// }
 h3 {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -44,7 +46,7 @@ h4, .media {
 }
 
 //footer
-footer {
+.footer {
   margin-top: 50px;
   margin-bottom: 30px;
   height: 75px;
@@ -54,6 +56,7 @@ footer {
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1442115597578-2d0fb2413734?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80");
   height: 600px;
+  width: 100%;
 }
 .slide2 {
   @include bgimage;
@@ -85,7 +88,6 @@ footer {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
   }
-
 
 //login
 .login {
@@ -237,7 +239,7 @@ footer {
     position: relative;
     margin-top: 70px;
     margin-left: 2.5px;
-    margin-right: 25px;
+    margin-right: 20px;
     padding: 15px;
     border-radius: 5px;
     #map {
@@ -253,18 +255,18 @@ footer {
     border-radius: 5px;
     margin-top: 70px;
     overflow:scroll;
-    margin-left: 25px;
+    margin-left: 20px;
     margin-right: 2.5px;
-    height: 430px;
+    height: 425px;
     opacity: .96;
     p {
       padding-bottom: 15px;
     }
-
   }
-
+  .selectmile {
+    width: 125px;
+  }
 }
-
 //group detail page
 .group {
   position: absolute;
@@ -406,10 +408,6 @@ footer {
     }
     p {
       font-size: 15px;
-    }
-
-    .list-group {
-
     }
   }
 }

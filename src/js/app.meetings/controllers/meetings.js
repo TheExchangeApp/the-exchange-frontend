@@ -51,7 +51,7 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
     vm.note.user_id = Number(vm.userID)
     MeetingService.addANote(vm.note, vm.id).then((resp) => {
 
-      vm.meeting.notes.unshift(resp.data);
+      vm.meeting.notes.push(resp.data);
       vm.note.note = '';
     }
   )};
