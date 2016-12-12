@@ -7,6 +7,7 @@ function GroupsController (GroupService, $state, NgMap) {
   vm.location = {};
   vm.add = add;
   vm.search = search;
+  vm.nearme = nearme;
   vm.detail = detail;
   vm.showResults = false;
   vm.map = null;
@@ -37,8 +38,7 @@ function GroupsController (GroupService, $state, NgMap) {
 
   function initMap () {
       navigator.geolocation.getCurrentPosition(pos => {
-        console.log("position object is: ", pos);
-
+        // console.log("position object is: ", pos);
       var location = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
       var mapCanvas = document.getElementById('map');
       var mapOptions = {
@@ -92,18 +92,18 @@ function GroupsController (GroupService, $state, NgMap) {
     });
   }
 
-  // function searchLocator (group, address) {
-  //     var geocoder;
-  //     var map;
-  //     geocoder = new google.maps.Geocoder();
-  //     geocoder.geocode( { 'address': address},  function(results, status) {
-  //       if (status == 'OK') {
-  //         group.lat = results[0].geometry.location.lat();
-  //         group.lng = results[0].geometry.location.lng();
-  //         findSearchedGroup(group);
-  //       }
-  //     });
-  //   }
+  function searchLocator (group, address) {
+      var geocoder;
+      var map;
+      geocoder = new google.maps.Geocoder();
+      geocoder.geocode( { 'address': address},  function(results, status) {
+        if (status == 'OK') {
+          group.lat = results[0].geometry.location.lat();
+          group.lng = results[0].geometry.location.lng();
+          findSearchedGroup(group);
+        }
+      });
+    }
 
     function addFinishedGroup (group) {
       GroupService.groupAdd(group).then((resp) => {
@@ -120,6 +120,28 @@ function GroupsController (GroupService, $state, NgMap) {
         vm.showResults = true;
       })
     }
+
+    function nearme (miles) {
+      navigator.geolocation.getCurrentPosition(pos => {
+      let location = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+      location.miles = miles;
+      console.log('mile search: ', location)
+      GroupService.nearby(location).then((resp)=> {
+        vm.location = resp.data;
+        console.log('addresses are: ', vm.location)
+        vm.location.forEach(group => {
+          var pos = {
+            lat: parseFloat(group.address.lat),
+            lng: parseFloat(group.address.lng)
+          }
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: vm.map
+          });
+        });
+      })
+    });
+  }
 
   function detail (group) {
     GroupService.groupDetail(group).then((resp) => {
