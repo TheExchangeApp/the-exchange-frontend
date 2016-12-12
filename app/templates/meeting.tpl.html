@@ -26,7 +26,7 @@
       <div class="notetitle text-center">Notes and Comments</div>
         <ul class="list-group">
           <li ng-repeat="note in meetingDetail.meeting.notes" class="note list-group-item">
-            <h5>{{note.created_at}} by username</h5>
+            <h5>{{note.created_at}} by {{note.users.name}}</h5>
             <p class="notebody">{{note.note}}</p>
           </li>
         </ul>

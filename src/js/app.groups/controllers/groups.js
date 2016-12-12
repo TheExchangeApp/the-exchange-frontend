@@ -9,8 +9,10 @@ function GroupsController (GroupService, $state, NgMap) {
   vm.search = search;
   vm.detail = detail;
   vm.showResults = false;
+  vm.map = null;
 
   function init () {
+    initMap();
     navigator.geolocation.getCurrentPosition(pos => {
       // console.log("position object is: ", pos);
       // console.log("lattitude is: ", pos.coords.latitude);
@@ -18,12 +20,19 @@ function GroupsController (GroupService, $state, NgMap) {
       // console.log('location: ', location)
       GroupService.nearby(location).then((resp)=> {
         vm.location = resp.data;
-        console.log('what is vm: ', vm.location)
-        })
-
-    })
-
-    initMap();
+        console.log('addresses are: ', vm.location)
+        vm.location.forEach(group => {
+          var pos = {
+            lat: parseFloat(group.address.lat),
+            lng: parseFloat(group.address.lng)
+          }
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: vm.map
+          });
+        });
+      })
+    });
   }
 
   function initMap () {
@@ -39,11 +48,11 @@ function GroupsController (GroupService, $state, NgMap) {
           mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
-      var map = new google.maps.Map(mapCanvas, mapOptions);
+      vm.map = new google.maps.Map(mapCanvas, mapOptions);
 
         var marker = new google.maps.Marker({
             position: location,
-            map: map
+            map: vm.map
         });
 
         var contentString = '<div class="info-window">' +
@@ -58,7 +67,7 @@ function GroupsController (GroupService, $state, NgMap) {
         });
 
         marker.addListener('click', function () {
-            infowindow.open(map, marker);
+            infowindow.open(vm.map, marker);
         });
       })
     google.maps.event.addDomListener(window, 'load', initMap);
@@ -72,7 +81,6 @@ function GroupsController (GroupService, $state, NgMap) {
 
   function googleLocator (group, address) {
     var geocoder;
-    var map;
     geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': address},  function(results, status) {
       // console.log('results', results[0])
