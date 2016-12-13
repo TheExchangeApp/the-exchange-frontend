@@ -144,6 +144,7 @@ li.bold {
   padding-top: 40px;
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1461237439866-5a557710c921?dpr=2&auto=format&fit=crop&w=1500&h=997&q=80");
+  height: 800px;
   width: 100%;
 
   .jumbotron {
@@ -204,6 +205,7 @@ li.bold {
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1433650552684-d4004a945d6c?dpr=2");
   width: 100%;
+  height: 800px;
   .jumbotron {
     position: relative;
     margin-left: 300px;
@@ -229,6 +231,11 @@ li.bold {
     padding: 0px;
     font-size: 15px;
   }
+  .groupsearchlist {
+    height: 400px;
+    overflow:scroll;
+  }
+
 }
 
 //nearby page
@@ -238,7 +245,7 @@ li.bold {
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1444212568492-d2799d30943b?dpr=2&auto=format&fit=crop&w=1500&h=998&q=80");
   width: 100%;
-
+  height: 800px;
   .jumbotron {
     position: relative;
     margin-left: 2.5px;
@@ -282,7 +289,7 @@ li.bold {
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1461595520627-42e3c83019bc?dpr=2&auto=format&fit=crop&w=1500&h=844&q=80");
   width: 100%;
-
+  height: 800px;
   .jumbotron {
     position: relative;
     margin-left: 200px;
@@ -342,7 +349,7 @@ li.bold {
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?dpr=2&auto=compress,format&fit=crop&w=376&h=282&q=80");
   width: 100%;
-
+  height: 1300px;
   .jumbotron {
     position: relative;
     margin-left: 200px;
@@ -417,6 +424,14 @@ li.bold {
       margin-top: 15px;
       margin-bottom: 5px;
     }
+    ul{
+      overflow:scroll;
+      height: 350px;
+    }
+    .list-group-item {
+      height: 125px;
+
+    }
   }
 }
 
@@ -427,7 +442,7 @@ li.bold {
   @include bgimage;
   background-image: url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80");
   width: 100%;
-
+  height: 1300px;
   .jumbotron {
     position: relative;
     margin-left: 250px;
@@ -452,8 +467,15 @@ li.bold {
       font-size: 18px;
     }
   }
-  .list-group {
+  li{
+    overflow: scroll;
+  }
+  .list-group-item {
     margin-bottom: 0px;
+    height: 250px;
+  }
+  .meetingname {
+    height: 70px;
   }
   .meetingtable {
     padding: 10px;

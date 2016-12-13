@@ -19,11 +19,14 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
 
   function profileGroup () {
     UserService.getGroups($stateParams.id).then((resp) => {
+      console.log(resp)
       vm.groups = resp.data[0];
       vm.meetings = resp.data[0].meetings;
       vm.meetingsAttending = vm.meetings.map(meeting => meeting.id);
       console.log('vm.groups: ', vm.groups);
-      
+
+      // let meetingOrder = _.orderBy(vm.groups,['time', 'asc']);
+
       vm.groups.created_at = moment(vm.groups.created_at).format("MMM D, YYYY");
       vm.groups.groups.forEach((group) => {
         group.meetings.forEach((meeting) => {

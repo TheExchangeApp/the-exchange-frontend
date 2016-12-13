@@ -13,6 +13,7 @@
                       <p>{{group.description}}</p>
 
                        <ul class="list-group meetingtable">
+                         Meetings:
                         <li class="list-group-item meetingname" ng-repeat="meeting in group.meetings" ng-class="profile.attending(meeting)">
                           <a class="meetingtitle" href="#/meeting/{{ meeting.id }}">
                             {{meeting.curriculum}}</a>
