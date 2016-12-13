@@ -445,6 +445,7 @@ li.bold {
     border-radius: 5px;
     opacity: .93;
     padding: 20px;
+    height: 1000px;
     h3 {
       margin-top: 10px;
       margin-bottom: 4px;
@@ -460,6 +461,9 @@ li.bold {
     a {
       font-size: 18px;
     }
+  }
+  .list-group {
+    margin-bottom: 0px;
   }
   .meetingtable {
     padding: 10px;
