@@ -56,27 +56,24 @@ function MeetingsController (MeetingService, $stateParams, $scope, $cookies, $st
   function addNote () {
     vm.note.user_id = Number(vm.userID)
     MeetingService.addANote(vm.note, vm.id).then((resp) => {
-
       vm.meeting.notes.push(resp.data);
       vm.note.note = '';
     }
   )};
 
-  function inputObj () {
+  function inputObj (info) {
     MeetingService.addObj(vm.obj, vm.note, vm.question, vm.id).then((resp) => {
       vm.mtg = resp.data;
       vm.organier = true;
-      console.log('Hi', vm.mtg.note)
-      // vm.obj = vm.mtg.obj;
-      // vm.mtg.note = vm.meeting.note;
-      // vm.question = vm.mtg.question;
+      console.log('Hi note', vm.mtg.note)
+      vm.mtg.obj = vm.obj;
+      vm.mtg.note = vm.note;
+      vm.mtg.question = vm.question;
       vm.obj = '';
       vm.note = '';
       vm.question = '';
-      // $state.go('root.meeting')
     });
   };
-
 };
 
 MeetingsController.$inject = ['MeetingService', '$stateParams', '$scope', '$cookies', '$state'];

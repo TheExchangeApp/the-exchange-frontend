@@ -1,49 +1,48 @@
 <div class="meeting">
   <div class="row">
     <div class="jumbotron text-center">
-      <h3>{{meetingDetail.meeting.curriculum}}</h3>
+      <h2>{{meetingDetail.meeting.curriculum}}</h2>
         <button class="btn btn-default" ng-hide="meetingDetail.isMember" ng-click="meetingDetail.addMtgMember()">JOIN</button>
 
-      <div class="organizer text-left">
-        <h4>Objective: {{meetingDetail.meeting.objective}}</h4>
-        <h4>Bible Verse: {{meetingDetail.meeting.note}}</h4>
-        <h4>Question: {{meetingDetail.meeting.question}}</h4>
-        <form ng-submit="meetingDetail.inputObj()" ng-show="meetingDetail.orgShow" class="objectiveform">
-            <label for="inputObjective3" class="control-label">Objective</label>
-              <textarea class="form-control" ng-model="meetingDetail.obj"></textarea>
-            <label for="inputVerse3" class=" control-label">Bible Verse</label>
+          <div class="organizer text-left">
+            <h4><span class="headers">Objective(s): </span><p class="info"> {{meetingDetail.meeting.objective}}</p></h4>
+            <h4><span class="headers">Bible Reference(s): </span><p class="info"> {{meetingDetail.meeting.note}}</p></h4>
+            <h4 class="question"><span class="headers">Question(s): <p class="info"></span> {{meetingDetail.meeting.question}}</p></h4>
+            <form ng-submit="meetingDetail.inputObj(info)" ng-show="meetingDetail.orgShow" class="objectiveform">
+                <label for="inputObjective3" class="control-label">Objective</label>
+                  <textarea class="form-control" ng-model="meetingDetail.obj"></textarea>
+                <label for="inputVerse3" class=" control-label">Bible Verse</label>
 
-              <textarea class="form-control" ng-model="meetingDetail.note"></textarea>
-            <label for="inputQuestion3" class="control-label">Questions</label>
+                  <textarea class="form-control" ng-model="meetingDetail.note"></textarea>
+                <label for="inputQuestion3" class="control-label">Questions</label>
 
-              <textarea class="form-control" ng-model="meetingDetail.question"></textarea>
-            <button class="btn btn-default">Add Information</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="notes">
-      <div class="notetitle text-center">Notes and Comments</div>
-        <ul class="list-group">
-          <li ng-repeat="note in meetingDetail.meeting.notes" class="note list-group-item">
-            <h5>{{note.created_at}} by {{note.users.name}}</h5>
-            <p class="notebody">{{note.note}}</p>
-          </li>
-        </ul>
-      <form ng-submit="meetingDetail.addNote()">
-          <textarea class="form-control" ng-model="meetingDetail.note.note">
-          </textarea>
-          <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" ng-model="meetingDetail.note.private">Private</label>
-             </div>
+                  <textarea class="form-control" ng-model="meetingDetail.question"></textarea>
+                <button class="btn btn-default">Add Information</button>
+            </form>
           </div>
+        </div>
 
-          <button type="submit" class="btn btn-default addnote">Add Note</button>
-      </form>
-    </div>
+        <div class="notes">
+          <div class="notetitle text-center">Notes and Comments</div>
+            <ul class="list-group">
+              <li ng-repeat="note in meetingDetail.meeting.notes" class=" list-group-item">
+                <h5 class="note">{{note.created_at}} by {{note.users.name}}</h5>
+                <p class="notebody">{{note.note}}</p>
+              </li>
+            </ul>
+          <form ng-submit="meetingDetail.addNote()">
+              <textarea class="form-control" ng-model="meetingDetail.note.note">
+              </textarea>
+              <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" ng-model="meetingDetail.note.private">Private</label>
+                 </div>
+              </div>
 
+              <button type="submit" class="btn btn-default addnote">Add Note</button>
+          </form>
+        </div>
 
   </div>
 </div>
