@@ -23,7 +23,7 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
       vm.meetings = resp.data[0].meetings;
       vm.meetingsAttending = vm.meetings.map(meeting => meeting.id);
       console.log('vm.groups: ', vm.groups);
-      console.log('vm.meetings: ', vm.meetingsAttending);
+      
       vm.groups.created_at = moment(vm.groups.created_at).format("MMM D, YYYY");
       vm.groups.groups.forEach((group) => {
         group.meetings.forEach((meeting) => {
