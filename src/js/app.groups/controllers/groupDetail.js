@@ -46,7 +46,7 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
     GroupService.groupAddMeeting(mtg).then((resp) => {
       vm.addMeeting = resp.data;
       // console.log(vm.addMeeting)
-      $state.go('root.home');
+      $state.go('root.profile');
     });
   };
 
