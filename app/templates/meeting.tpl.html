@@ -8,10 +8,10 @@
             <h4><span class="headers">Objective(s): </span><p class="info"> {{meetingDetail.meeting.objective}}</p></h4>
 
             <h4><span class="headers">Bible Reference(s): </span><p class="info"> {{meetingDetail.meeting.note}}</p></h4>
-            
+
             <h4 class="question"><span class="headers">Question(s): <p class="info"></span> {{meetingDetail.meeting.question}}</p></h4>
           </div>
-
+        </div>
         <div class="notes">
           <div class="notetitle text-center">Notes and Comments</div>
             <ul class="list-group">
@@ -21,6 +21,7 @@
               </li>
             </ul>
           <form ng-submit="meetingDetail.addNote()">
+            <p class="text-center noteinput">Add a Note or Comment</p>
               <textarea class="form-control" ng-model="meetingDetail.note.note">
               </textarea>
               <div class="form-group">

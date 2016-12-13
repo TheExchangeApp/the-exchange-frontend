@@ -378,7 +378,6 @@ li.bold {
     .question {
       line-height: 1.5;
     }
-
   }
   .notes {
     position: relative;
@@ -404,8 +403,8 @@ li.bold {
     }
     textarea {
       margin-top: 20px;
-      width: 75%;
-      margin-left: 100px;
+      width: 100%;
+      // margin-left: 100px;
       margin-bottom: 5px;
       height: 90px;
     }
@@ -414,6 +413,10 @@ li.bold {
     }
     .note {
       color: #4183BC;
+    }
+    p {
+      margin-top: 15px;
+      margin-bottom: 5px;
     }
   }
 }
