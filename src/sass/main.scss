@@ -368,6 +368,17 @@ li.bold {
       border: none;
       font-size: 15px;
     }
+    .info {
+      padding-top: 5px;
+      font-size: 15px;
+    }
+    .headers {
+      font-weight: 600;
+    }
+    .question {
+      line-height: 1.5;
+    }
+
   }
   .notes {
     position: relative;
@@ -430,18 +441,25 @@ li.bold {
       text-transform: uppercase;
     }
     p {
-      font-size: 15px;
+      font-size: 13px;
     }
   }
   .grouptable {
     padding: 25px;
     text-align: center;
     a {
-      font-size: 17px;
+      font-size: 18px;
     }
   }
   .meetingtable {
-    padding: 20px;
+    padding: 10px;
     text-align: left;
+    a {
+      font-size: 15px;
+    }
+  }
+  .meetingdate {
+    font-size: 15px;
+    margin-bottom: 5px;
   }
 }

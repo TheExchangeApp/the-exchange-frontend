@@ -1,15 +1,16 @@
 <div class="meeting">
   <div class="row">
     <div class="jumbotron text-center">
-      <h2>{{meetingDetail.meeting.curriculum}}</h2>
+      <h3>{{meetingDetail.meeting.curriculum}}</h3>
         <button class="btn btn-default" ng-hide="meetingDetail.isMember" ng-click="meetingDetail.addMtgMember()">JOIN</button>
 
-          <div class="organizer text-left">
+        <div class="organizer text-left">
             <h4><span class="headers">Objective(s): </span><p class="info"> {{meetingDetail.meeting.objective}}</p></h4>
+
             <h4><span class="headers">Bible Reference(s): </span><p class="info"> {{meetingDetail.meeting.note}}</p></h4>
+            
             <h4 class="question"><span class="headers">Question(s): <p class="info"></span> {{meetingDetail.meeting.question}}</p></h4>
           </div>
-        </div>
 
         <div class="notes">
           <div class="notetitle text-center">Notes and Comments</div>
