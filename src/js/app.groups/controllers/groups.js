@@ -127,8 +127,10 @@ function GroupsController (GroupService, $state, NgMap) {
       location.miles = miles;
       console.log('mile search: ', location)
       GroupService.nearby(location).then((resp)=> {
+        console.log("searched")
         vm.location = resp.data;
         console.log('addresses are: ', vm.location)
+        let markersArray =[];
         vm.location.forEach(group => {
           var pos = {
             lat: parseFloat(group.address.lat),
@@ -138,9 +140,19 @@ function GroupsController (GroupService, $state, NgMap) {
             position: pos,
             map: vm.map
           });
+          markersArray.push(pos);
         });
+        resetBounds(markersArray)
       })
     });
+  }
+
+  function resetBounds(array){
+    var latlngbounds = new google.maps.LatLngBounds();
+    array.forEach(function (waypoint){
+      latlngbounds.extend(waypoint)
+    })
+    vm.map.fitBounds(latlngbounds);
   }
 
   function detail (group) {
