@@ -30,7 +30,7 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
       if (Number(vm.userID) === vm.group.organizer_id) memBool = true;
       if (!memBool) vm.isOrganizer = false;
       vm.group.meetings.forEach((meeting) => {
-        meeting.time = moment(meeting.time).format("hh:mm A");
+        meeting.time = moment(meeting.time).format("ddd, MMMM Do YYYY, h:mm A");
       });
 
       memberList();
@@ -46,7 +46,7 @@ function GroupDetailController (GroupService, $stateParams, $state, $cookies) {
     GroupService.groupAddMeeting(mtg).then((resp) => {
       vm.addMeeting = resp.data;
       // console.log(vm.addMeeting)
-      $state.go('root.home');
+      $state.go('root.profile');
     });
   };
 
