@@ -9,13 +9,14 @@
                   <ul class="list-group grouptable" ng-repeat="group in profile.groups.groups">
                     <li class="list-group-item" >
                       <a href="#/groupDetail/{{ group.id }}">
-                        {{group.title}} - {{group.description}}
-                     </a>
+                        {{group.title}}</a>
+                      <p>{{group.description}}</p>
+
                        <ul class="list-group meetingtable">
                         <li class="list-group-item meetingname" ng-repeat="meeting in group.meetings" ng-class="profile.attending(meeting)">
-                          <a href="#/meeting/{{ meeting.id }}">
-                            {{meeting.time}} {{meeting.curriculum}}
-                          </a>
+                          <a class="meetingtitle" href="#/meeting/{{ meeting.id }}">
+                            {{meeting.curriculum}}</a>
+                          <p class="meetingdate">{{meeting.time}} </p>
                         </li>
                       </ul>
                     </li>
