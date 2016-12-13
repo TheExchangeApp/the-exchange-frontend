@@ -190,7 +190,9 @@ li.bold {
       font-size: 15px;
       padding-bottom: 15px;
     }
-
+    .organizer {
+      margin-left: 50px;
+    }
   }
   .form-control {
     width: 300px;
@@ -219,7 +221,7 @@ li.bold {
     p {
       text-align: center;
       font-size: 15px;
-      padding-bottom: 15px;
+      padding-bottom: 0px;
     }
   }
   .form-control {
@@ -227,6 +229,8 @@ li.bold {
   }
   .result {
     margin-bottom: 0px;
+    padding: 0px;
+    font-size: 15px;
   }
 }
 
@@ -359,19 +363,6 @@ li.bold {
       background-color: #EEEEEE;
       border: none;
       font-size: 15px;
-    }
-    .organizer {
-      padding-top: 10px;
-      .info {
-        padding-top: 5px;
-        font-size: 15px;
-      }
-      .headers {
-        font-weight: 600;
-      }
-      .question {
-        line-height: 1.5;
-      }
     }
   }
   .notes {

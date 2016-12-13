@@ -98,9 +98,10 @@
           <li ng-repeat="group in groupSearch.groups.results">
             <p>
               <a class="group-detail" href="#/groupDetail/{{ group.id }}">
-              <h4>Title {{group.title}} - {{group.description}}<h4></a>
+              <h4>{{group.title}}<h4></a>
+              <p class="result">{{group.description}}</p>
               <p class="result">Address: {{group.address.street}}, {{group.address.city}},  {{group.address.state}} {{group.address.zip}}</p>
-              <p class="result">{{group.category}} Group Meeting on {{group.day}}'s</p>
+              <p class="result">{{group.category}} Group Meeting on {{group.day}}s</p>
               <p class="result">Childcare: {{group.childcare? 'Yes':'No'}}</p>
 
             </p>
