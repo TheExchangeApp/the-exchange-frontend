@@ -8,17 +8,6 @@
             <h4><span class="headers">Objective(s): </span><p class="info"> {{meetingDetail.meeting.objective}}</p></h4>
             <h4><span class="headers">Bible Reference(s): </span><p class="info"> {{meetingDetail.meeting.note}}</p></h4>
             <h4 class="question"><span class="headers">Question(s): <p class="info"></span> {{meetingDetail.meeting.question}}</p></h4>
-            <form ng-submit="meetingDetail.inputObj(info)" ng-show="meetingDetail.orgShow" class="objectiveform">
-                <label for="inputObjective3" class="control-label">Objective</label>
-                  <textarea class="form-control" ng-model="meetingDetail.obj"></textarea>
-                <label for="inputVerse3" class=" control-label">Bible Verse</label>
-
-                  <textarea class="form-control" ng-model="meetingDetail.note"></textarea>
-                <label for="inputQuestion3" class="control-label">Questions</label>
-
-                  <textarea class="form-control" ng-model="meetingDetail.question"></textarea>
-                <button class="btn btn-default">Add Information</button>
-            </form>
           </div>
         </div>
 
