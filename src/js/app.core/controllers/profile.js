@@ -27,7 +27,7 @@ function ProfileController (UserService, GroupService, $state, $rootScope, $stat
       vm.groups.created_at = moment(vm.groups.created_at).format("MMM D, YYYY");
       vm.groups.groups.forEach((group) => {
         group.meetings.forEach((meeting) => {
-          meeting.time = moment(meeting.time).format("hh:mm A");
+          meeting.time = moment(meeting.time).format("ddd, MMMM Do YYYY, h:mm A");
         });
       });
     });
