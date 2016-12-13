@@ -1,9 +1,6 @@
 * {
    box-sizing: border-box;
    font-family: 'Open Sans', sans-serif;
-  //  font-family: 'Homemade Apple', cursive;
-  //  font-family: 'Lora', serif;
-  //  font-family: 'PT Serif', serif;
    list-style-type: none;
 }
 @mixin bgimage {
@@ -11,14 +8,13 @@
   background-position: center;
   background-size: cover;
 }
-// html,body{
-//     height: 100%
-// }
+
 h3 {
   margin-top: 25px;
   margin-bottom: 25px;
   font-weight: 500;
 }
+
 h4, .media {
   font-weight: 300;
 }
@@ -44,8 +40,8 @@ h4, .media {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 li.bold {
-  color: green;
   a {
     color: green;
   }
@@ -53,10 +49,11 @@ li.bold {
 
 //footer
 .footer {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 30px;
   height: 75px;
 }
+
 //carousel
 .slide1 {
   @include bgimage;
@@ -264,14 +261,22 @@ li.bold {
     margin-right: 2.5px;
     height: 430px;
     opacity: .96;
+    h4{
+      margin-bottom: 0px;
+    }
     p {
-      padding-bottom: 15px;
+      margin-bottom: 27px;
+      padding-top: 4px;
     }
   }
   .selectmile {
     width: 125px;
   }
+  .groupsnearby {
+    padding-top: 15px;
+  }
 }
+
 //group detail page
 .group {
   position: relative;
@@ -345,14 +350,28 @@ li.bold {
     }
     form {
       margin-top: 20px;
-      width: 75%;
+      width: 80%;
       margin-left: 100px;
     }
     h4 {
       padding-left: 100px;
+      padding-right: 100px;
       background-color: #EEEEEE;
       border: none;
       font-size: 15px;
+    }
+    .organizer {
+      padding-top: 10px;
+      .info {
+        padding-top: 5px;
+        font-size: 15px;
+      }
+      .headers {
+        font-weight: 600;
+      }
+      .question {
+        line-height: 1.5;
+      }
     }
   }
   .notes {
@@ -382,9 +401,13 @@ li.bold {
       width: 75%;
       margin-left: 100px;
       margin-bottom: 5px;
+      height: 90px;
     }
     .checkbox, .addnote {
       margin-left: 100px;
+    }
+    .note {
+      color: #4183BC;
     }
   }
 }
@@ -414,5 +437,16 @@ li.bold {
     p {
       font-size: 15px;
     }
+  }
+  .grouptable {
+    padding: 25px;
+    text-align: center;
+    a {
+      font-size: 17px;
+    }
+  }
+  .meetingtable {
+    padding: 20px;
+    text-align: left;
   }
 }
