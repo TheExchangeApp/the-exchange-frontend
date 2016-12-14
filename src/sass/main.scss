@@ -92,6 +92,36 @@ li.bold {
     font-weight: 300;
   }
 
+//about
+.about {
+  position: relative;
+  padding-top: 40px;
+  @include bgimage;
+  background-image: url("https://images.unsplash.com/photo-1480561807109-e2aa33f23be8?dpr=2&auto=compress,format&fit=crop&w=376&h=282&q=80");
+  height: 600px;
+  width: 100%;
+
+  .jumbotron {
+    position: relative;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 20px;
+    border-radius: 5px;
+    height: 500px;
+    opacity: .91;
+    .logo {
+      border-bottom: solid 1px #000000;
+      padding-bottom: 15px;
+    }
+    .aboutinfo{
+      font-size: 17px;
+      padding: 25px;
+      line-height: 1.6;
+      padding-top: 5px;
+    }
+  }
+}
+
 //login
 .login {
   position: relative;
