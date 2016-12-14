@@ -18,7 +18,7 @@
         <div class="notes">
           <div class="notetitle text-center">Notes and Comments</div>
             <ul class="list-group">
-              <li ng-repeat="note in meetingDetail.meeting.notes" class=" list-group-item">
+              <li ng-repeat="note in meetingDetail.meeting.notes" class=" list-group-item" ng-class="{ private: note.private }">
                 <h5 class="note">{{note.created_at}} by {{note.users.name}}</h5>
                 <p class="notebody">{{note.note}}</p>
               </li>
