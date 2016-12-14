@@ -49,9 +49,12 @@ li.bold {
 
 //footer
 .footer {
-  margin-top: 30px;
   margin-bottom: 30px;
+  padding-top: 20px;
   height: 75px;
+  i {
+    padding-bottom: 15px;
+  }
 }
 
 //carousel
@@ -92,6 +95,36 @@ li.bold {
     font-weight: 300;
   }
 
+//home
+.home {
+  .thumbnail {
+    background-color: #EEEEEE;
+    height: 250px;
+  }
+  .col-md-4 {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .boxone {
+    padding-left: 60px;
+    padding-right: 15px;
+  }
+  .boxtwo {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .boxthree {
+    padding-left: 15px;
+    padding-right: 60px;
+  }
+  p{
+    margin-bottom: 15px;
+    margin-top: 15px;
+    height: 100px;
+  }
+}
+
 //about
 .about {
   position: relative;
@@ -114,7 +147,7 @@ li.bold {
       padding-bottom: 15px;
     }
     .aboutinfo{
-      font-size: 17px;
+      font-size: 15px;
       padding: 25px;
       line-height: 1.6;
       padding-top: 5px;
